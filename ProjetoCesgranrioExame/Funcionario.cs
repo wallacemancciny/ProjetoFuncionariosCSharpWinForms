@@ -14,13 +14,14 @@ namespace ProjetoCesgranrioExame
         SqlCommand cmd = new SqlCommand();
         public String mensagem = "";
 
-        public void CadastrarFuncionario(String Nome, String Telefone, String Email, String DataNascimento, int IdDepartamento)
+        public void CadastrarFuncionario(String Nome, String CPF, String Telefone, String Email, String DataNascimento, int IdDepartamento)
         {
 
             //Comando Sql
-            cmd.CommandText = "insert into Funcionarios(Nome,Telefone,Email,DataNascimento,DepartamentoId) values(@Nome,@Telefone,@Email,@DataNascimento,@IdDepartamento)";
+            cmd.CommandText = "insert into Funcionarios(Nome,CPF,Telefone,Email,DataNascimento,DepartamentoId) values(@Nome,@CPF,@Telefone,@Email,@DataNascimento,@IdDepartamento)";
             //parametros
             cmd.Parameters.AddWithValue("@Nome", Nome);
+            cmd.Parameters.AddWithValue("@CPF", CPF);
             cmd.Parameters.AddWithValue("@Telefone", Telefone);
             cmd.Parameters.AddWithValue("@Email", Email);
             cmd.Parameters.AddWithValue("@DataNascimento", DataNascimento);
@@ -101,14 +102,15 @@ namespace ProjetoCesgranrioExame
             }
         }
 
-        public void atualizarFuncionarioPorId(String Nome, String Telefone, String Email, String DataNascimento, int Id, int DepartamentoId)
+        public void atualizarFuncionarioPorId(String Nome, String CPF, String Telefone, String Email, String DataNascimento, int Id, int DepartamentoId)
         {
 
             //Comando Sql
-            cmd.CommandText = "update Funcionarios set Nome = @Nome, Telefone = @Telefone ,Email = @Email, DataNascimento = @DataNascimento, DepartamentoId = @DepartamentoId where Id = @Id";
+            cmd.CommandText = "update Funcionarios set Nome = @Nome, CPF = @CPF, Telefone = @Telefone ,Email = @Email, DataNascimento = @DataNascimento, DepartamentoId = @DepartamentoId where Id = @Id";
             //parametros
             cmd.Parameters.AddWithValue("@Id", Id);
             cmd.Parameters.AddWithValue("@Nome", Nome);
+            cmd.Parameters.AddWithValue("@CPF", CPF);
             cmd.Parameters.AddWithValue("@Telefone", Telefone);
             cmd.Parameters.AddWithValue("@Email", Email);
             cmd.Parameters.AddWithValue("@DataNascimento", DataNascimento);
@@ -130,6 +132,23 @@ namespace ProjetoCesgranrioExame
                 this.mensagem = "Erro ao se conectar com o banco de dados";
 
             }
+
+        }
+
+        public DataTable PesquisarFuncionarios(String buscaCriterio)
+        {
+
+            SqlCommand cmd = new SqlCommand("select * from Funcionarios where CPF = @buscaCriterio", conexao.conectar());
+            cmd.Parameters.AddWithValue("@buscaCriterio", buscaCriterio);
+            DataTable dt = new DataTable();
+
+            conexao.conectar();
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+            dt.Load(sdr);
+            conexao.desconectar();
+
+            return dt;
 
         }
 

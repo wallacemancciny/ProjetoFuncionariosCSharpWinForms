@@ -47,9 +47,9 @@ namespace ProjetoCesgranrioExame
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Validar se digitou ao menos o nome do Funcionário
-            if (textNomeCompleto.Text == "")
+            if (textNomeCompleto.Text == "" || textCPF.Text == "")
             {
-                MessageBox.Show("Digite ao menos o nome do Funcionário");
+                MessageBox.Show("Digite ao menos o NOME e CPF do Funcionário");
             }
             else
             {
@@ -62,8 +62,9 @@ namespace ProjetoCesgranrioExame
                     int IdDepartamentoSelecionadoInt = Convert.ToInt32(IdDepartamentoSelecionadoString);
 
                     Funcionario Funcionario = new Funcionario();
-                    Funcionario.CadastrarFuncionario(textNomeCompleto.Text, textTelefone.Text, textEmail.Text, textDataNascimento.Text, IdDepartamentoSelecionadoInt);
+                    Funcionario.CadastrarFuncionario(textNomeCompleto.Text,textCPF.Text, textTelefone.Text, textEmail.Text, textDataNascimento.Text, IdDepartamentoSelecionadoInt);
                     textNomeCompleto.Text = "";
+                    textCPF.Text = "";
                     textTelefone.Text = "";
                     textEmail.Text = "";
                     textDataNascimento.Text = "";
@@ -80,7 +81,7 @@ namespace ProjetoCesgranrioExame
                     //caso tenha Id do funcionario carregado no formulário ele vai atualizar apenas.
                     int IdFuncionarioInteiro = Convert.ToInt32(textIdFunc.Text);
                     Funcionario funcUpdate = new Funcionario();
-                    funcUpdate.atualizarFuncionarioPorId(textNomeCompleto.Text, textTelefone.Text, textEmail.Text, textDataNascimento.Text, IdFuncionarioInteiro, IdDepartamentoSelecionadoInt);
+                    funcUpdate.atualizarFuncionarioPorId(textNomeCompleto.Text, textCPF.Text,textTelefone.Text, textEmail.Text, textDataNascimento.Text, IdFuncionarioInteiro, IdDepartamentoSelecionadoInt);
                     MessageBox.Show(funcUpdate.mensagem);
                     dataGridViewHome.DataSource = funcUpdate.GetFuncionariosRecord();
                 }
@@ -123,16 +124,19 @@ namespace ProjetoCesgranrioExame
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow registro = this.dataGridViewHome.Rows[e.RowIndex];
+                DataGridViewRow registroClicado = this.dataGridViewHome.Rows[e.RowIndex];
 
                 //
                 //string IdSelecionado = registro.Cells["Id"].Value.ToString();
 
-                textIdFunc.Text = registro.Cells["Id"].Value.ToString();
-                textNomeCompleto.Text = registro.Cells["Nome"].Value.ToString();
-                textTelefone.Text = registro.Cells["Telefone"].Value.ToString();
-                textEmail.Text = registro.Cells["Email"].Value.ToString();
-                textDataNascimento.Text = registro.Cells["DataNascimento"].Value.ToString();
+                textIdFunc.Text = registroClicado.Cells["Id"].Value.ToString();
+                textNomeCompleto.Text = registroClicado.Cells["Nome"].Value.ToString();
+                textCPF.Text = registroClicado.Cells["CPF"].Value.ToString();
+                textTelefone.Text = registroClicado.Cells["Telefone"].Value.ToString();
+                textEmail.Text = registroClicado.Cells["Email"].Value.ToString();
+                textDataNascimento.Text = registroClicado.Cells["DataNascimento"].Value.ToString();
+                comboDepartamento.Text = registroClicado.Cells["DepartamentoId"].Value.ToString();
+                
 
                 //Testar pra saber se está trazendo o ID correto
                 //MessageBox.Show(IdSelecionado);
@@ -141,35 +145,34 @@ namespace ProjetoCesgranrioExame
 
         public void btnDelete_Click(object sender, EventArgs e)
         {
-
-            if (MessageBox.Show("Tem certeza que deseja deletar este funcionário?", "Cuidado",
+            if (textIdFunc.Text == "")
+            {
+                MessageBox.Show("Você precisa selecionar alguém!");
+            } else
+            {
+                if (MessageBox.Show("Tem certeza que deseja deletar este funcionário?", "Cuidado",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
-            {
-                MessageBox.Show("Delete cancelado!");
-            }
-            else
-            {
-                Funcionario func = new Funcionario();
-
-
-                if (textIdFunc.Text == "")
                 {
-                    MessageBox.Show("Você precisa selecionar alguém!");
+                    MessageBox.Show("Delete cancelado!");
                 }
                 else
                 {
+                    Funcionario func = new Funcionario();
                     int IdFuncionarioInteiro = Convert.ToInt32(textIdFunc.Text);
                     func.deletarFuncionadioPorId(IdFuncionarioInteiro);
                     textIdFunc.Text = "";
                     textNomeCompleto.Text = "";
+                    textCPF.Text = "";
                     textTelefone.Text = "";
                     textEmail.Text = "";
                     textDataNascimento.Text = "";
                     MessageBox.Show("Funcionario Deletado com sucesso!");
+
+
                 }
-
-
             }
+
+            
 
             //Atualizar os registros do Grid ao carregar o form
             Funcionario Funcionario = new Funcionario();
@@ -181,11 +184,25 @@ namespace ProjetoCesgranrioExame
         {
             textIdFunc.Text = "";
             textNomeCompleto.Text = "";
+            textCPF.Text = "";
             textTelefone.Text = "";
             textEmail.Text = "";
             textDataNascimento.Text = "";
         }
 
+        private void btnPesquisarFuncionario_Click(object sender, EventArgs e)
+        {
+            //atualizar grid com a pesquisa do funcionario
+            Funcionario pesquisaFun = new Funcionario();
+            dataGridViewHome.DataSource = pesquisaFun.PesquisarFuncionarios(textPesquisaFuncionario.Text);
 
+        }
+
+        private void btnLimparPesquisa_Click(object sender, EventArgs e)
+        {
+            //Atualizar os registros do Grid ao carregar o form
+            Funcionario Funcionario = new Funcionario();
+            dataGridViewHome.DataSource = Funcionario.GetFuncionariosRecord();
+        }
     }
 }
