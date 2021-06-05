@@ -9,3 +9,14 @@ D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Copia\P
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Copia\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.pdb
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Copia\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.FormDepartamento.resources
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Copia\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.FormHomeFuncionarios.resources
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.exe.config
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.exe
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.pdb
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExameWallace.csprojAssemblyReference.cache
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.FormDepartamento.resources
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.FormHomeFuncionarios.resources
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.Properties.Resources.resources
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExameWallace.csproj.GenerateResource.cache
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExameWallace.csproj.CoreCompileInputs.cache
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.exe
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.pdb
