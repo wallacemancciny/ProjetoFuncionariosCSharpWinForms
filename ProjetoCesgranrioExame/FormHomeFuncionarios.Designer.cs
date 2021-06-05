@@ -50,7 +50,6 @@ namespace ProjetoCesgranrioExame
             this.comboDepartamento = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnAtualizar = new System.Windows.Forms.Button();
-            this.LabelIdSelecionada = new System.Windows.Forms.Label();
             this.textIdFunc = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
@@ -242,21 +241,13 @@ namespace ProjetoCesgranrioExame
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
-            // LabelIdSelecionada
-            // 
-            this.LabelIdSelecionada.AutoSize = true;
-            this.LabelIdSelecionada.Location = new System.Drawing.Point(298, 97);
-            this.LabelIdSelecionada.Name = "LabelIdSelecionada";
-            this.LabelIdSelecionada.Size = new System.Drawing.Size(0, 13);
-            this.LabelIdSelecionada.TabIndex = 12;
-            // 
             // textIdFunc
             // 
             this.textIdFunc.Location = new System.Drawing.Point(287, 91);
             this.textIdFunc.Name = "textIdFunc";
             this.textIdFunc.ReadOnly = true;
             this.textIdFunc.Size = new System.Drawing.Size(75, 20);
-            this.textIdFunc.TabIndex = 1;
+            this.textIdFunc.TabIndex = 11;
             // 
             // label7
             // 
@@ -276,7 +267,6 @@ namespace ProjetoCesgranrioExame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(962, 450);
-            this.Controls.Add(this.LabelIdSelecionada);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.comboDepartamento);
             this.Controls.Add(this.BtnDepartamento);
@@ -329,7 +319,6 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.ComboBox comboDepartamento;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAtualizar;
-        private System.Windows.Forms.Label LabelIdSelecionada;
         private System.Windows.Forms.TextBox textIdFunc;
         private System.Windows.Forms.Label label7;
     }

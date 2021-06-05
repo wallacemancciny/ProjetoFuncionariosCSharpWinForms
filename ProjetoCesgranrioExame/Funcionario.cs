@@ -14,16 +14,17 @@ namespace ProjetoCesgranrioExame
         SqlCommand cmd = new SqlCommand();
         public String mensagem = "";
 
-        public void CadastrarFuncionario(String Nome, String Telefone, String Email, String DataNascimento)
+        public void CadastrarFuncionario(String Nome, String Telefone, String Email, String DataNascimento, int IdDepartamento)
         {
 
             //Comando Sql
-            cmd.CommandText = "insert into Funcionarios(Nome,Telefone,Email,DataNascimento) values(@Nome,@Telefone,@Email,@DataNascimento)";
+            cmd.CommandText = "insert into Funcionarios(Nome,Telefone,Email,DataNascimento,DepartamentoId) values(@Nome,@Telefone,@Email,@DataNascimento,@IdDepartamento)";
             //parametros
             cmd.Parameters.AddWithValue("@Nome", Nome);
             cmd.Parameters.AddWithValue("@Telefone", Telefone);
             cmd.Parameters.AddWithValue("@Email", Email);
             cmd.Parameters.AddWithValue("@DataNascimento", DataNascimento);
+            cmd.Parameters.AddWithValue("@IdDepartamento", IdDepartamento);
 
             try
             {
@@ -38,7 +39,7 @@ namespace ProjetoCesgranrioExame
             }
             catch (SqlException)
             {
-                this.mensagem = "Erro ao se conectar com o banco de dados";
+                this.mensagem = "Erro ao se conectar com o banco de dados [CadastrarFuncionario]";
 
             }
 
@@ -100,17 +101,18 @@ namespace ProjetoCesgranrioExame
             }
         }
 
-        public void atualizarFuncionarioPorId(String Nome, String Telefone, String Email, String DataNascimento, int Id)
+        public void atualizarFuncionarioPorId(String Nome, String Telefone, String Email, String DataNascimento, int Id, int DepartamentoId)
         {
 
             //Comando Sql
-            cmd.CommandText = "update Funcionarios set Nome = @Nome, Telefone = @Telefone ,Email = @Email, DataNascimento = @DataNascimento where Id = @Id";
+            cmd.CommandText = "update Funcionarios set Nome = @Nome, Telefone = @Telefone ,Email = @Email, DataNascimento = @DataNascimento, DepartamentoId = @DepartamentoId where Id = @Id";
             //parametros
             cmd.Parameters.AddWithValue("@Id", Id);
             cmd.Parameters.AddWithValue("@Nome", Nome);
             cmd.Parameters.AddWithValue("@Telefone", Telefone);
             cmd.Parameters.AddWithValue("@Email", Email);
             cmd.Parameters.AddWithValue("@DataNascimento", DataNascimento);
+            cmd.Parameters.AddWithValue("@DepartamentoId", DepartamentoId);
 
             try
             {

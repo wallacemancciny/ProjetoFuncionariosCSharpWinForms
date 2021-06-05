@@ -18,44 +18,51 @@ namespace ProjetoCesgranrioExame
         SqlCommand cmd = new SqlCommand();
         public String mensagem = "";
 
+
         public FormHomeFuncionarios()
         {
             InitializeComponent();
         }
 
 
+
         private void FormHomeFuncionarios_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'cesgranrioTestDBDataSet.Funcionarios'. Você pode movê-la ou removê-la conforme necessário.
-            //this.funcionariosTableAdapter.Fill(this.cesgranrioTestDBDataSet.Funcionarios);
-
             //Atualizar os registros do Grid ao carregar o form
             Funcionario Funcionario = new Funcionario();
             dataGridViewHome.DataSource = Funcionario.GetFuncionariosRecord();
 
-            //Metodo para listar os items do combobox
+            //Metodo para listar os items do Departamento no combobox
             Funcionario Func = new Funcionario();
             Func.GetDepartamentosList();
             comboDepartamento.DataSource = Func.GetDepartamentosList();
-            comboDepartamento.DisplayMember = "Nome";
             comboDepartamento.ValueMember = "Id";
-            
+            comboDepartamento.DisplayMember = "Nome";
+
+
+
         }
 
 
         private void btnSave_Click(object sender, EventArgs e)
-        {   
+        {
             //Validar se digitou ao menos o nome do Funcionário
             if (textNomeCompleto.Text == "")
             {
                 MessageBox.Show("Digite ao menos o nome do Funcionário");
-            } else
+            }
+            else
             {
                 //Salvar apenas se não tiver registro carregado na tela 
                 if (textIdFunc.Text == "")
                 {
+                    //Pegando valor do combo box selecionado, convertendo e salvando em uma variavel
+                    String IdDepartamentoSelecionadoString = Convert.ToString(comboDepartamento.SelectedValue);
+                    //convertendo para Inteiro
+                    int IdDepartamentoSelecionadoInt = Convert.ToInt32(IdDepartamentoSelecionadoString);
+
                     Funcionario Funcionario = new Funcionario();
-                    Funcionario.CadastrarFuncionario(textNomeCompleto.Text, textTelefone.Text, textEmail.Text, textDataNascimento.Text);
+                    Funcionario.CadastrarFuncionario(textNomeCompleto.Text, textTelefone.Text, textEmail.Text, textDataNascimento.Text, IdDepartamentoSelecionadoInt);
                     textNomeCompleto.Text = "";
                     textTelefone.Text = "";
                     textEmail.Text = "";
@@ -66,13 +73,18 @@ namespace ProjetoCesgranrioExame
                 }
                 else
                 {
+                    //Pegando valor do combo box selecionado, convertendo e salvando em uma variavel
+                    String IdDepartamentoSelecionadoString = Convert.ToString(comboDepartamento.SelectedValue);
+                    //convertendo para Inteiro
+                    int IdDepartamentoSelecionadoInt = Convert.ToInt32(IdDepartamentoSelecionadoString);
+                    //caso tenha Id do funcionario carregado no formulário ele vai atualizar apenas.
                     int IdFuncionarioInteiro = Convert.ToInt32(textIdFunc.Text);
                     Funcionario funcUpdate = new Funcionario();
-                    funcUpdate.atualizarFuncionarioPorId(textNomeCompleto.Text, textTelefone.Text, textEmail.Text, textDataNascimento.Text, IdFuncionarioInteiro);
+                    funcUpdate.atualizarFuncionarioPorId(textNomeCompleto.Text, textTelefone.Text, textEmail.Text, textDataNascimento.Text, IdFuncionarioInteiro, IdDepartamentoSelecionadoInt);
                     MessageBox.Show(funcUpdate.mensagem);
                     dataGridViewHome.DataSource = funcUpdate.GetFuncionariosRecord();
                 }
-            }  
+            }
 
         }
 
@@ -82,16 +94,20 @@ namespace ProjetoCesgranrioExame
             formdep.Show();
         }
 
+        private void ComboDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Funcionario Func = new Funcionario();
+            //Func.GetDepartamentosList();
+            //comboDepartamento.DataSource = Func.GetDepartamentosList();
+            //comboDepartamento.DisplayMember = "Nome";
+            //comboDepartamento.ValueMember = "Id";
+
+        }
+
         private void comboDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Funcionario Func = new Funcionario();
-            Func.GetDepartamentosList();
-            comboDepartamento.DataSource = Func.GetDepartamentosList();
-            comboDepartamento.DisplayMember = "Nome";
-            comboDepartamento.ValueMember = "Id";
-            
-
-            comboDepartamento.SelectedItem = comboDepartamento.ValueMember = "Id";
+            String IdDepartamentoSelecionado = Convert.ToString(comboDepartamento.SelectedValue);
+            //LabIdDepartamento.Text = IdDepartamentoSelecionado;
 
 
         }
@@ -108,7 +124,7 @@ namespace ProjetoCesgranrioExame
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow registro = this.dataGridViewHome.Rows[e.RowIndex];
-                
+
                 //
                 //string IdSelecionado = registro.Cells["Id"].Value.ToString();
 
@@ -126,20 +142,21 @@ namespace ProjetoCesgranrioExame
         public void btnDelete_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Tem certeza que deseja deletar este funcionário?", "Cuidado", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2)==DialogResult.No)
+            if (MessageBox.Show("Tem certeza que deseja deletar este funcionário?", "Cuidado",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
             {
                 MessageBox.Show("Delete cancelado!");
             }
             else
             {
                 Funcionario func = new Funcionario();
-                
+
 
                 if (textIdFunc.Text == "")
                 {
                     MessageBox.Show("Você precisa selecionar alguém!");
-                } else
+                }
+                else
                 {
                     int IdFuncionarioInteiro = Convert.ToInt32(textIdFunc.Text);
                     func.deletarFuncionadioPorId(IdFuncionarioInteiro);
@@ -150,8 +167,8 @@ namespace ProjetoCesgranrioExame
                     textDataNascimento.Text = "";
                     MessageBox.Show("Funcionario Deletado com sucesso!");
                 }
-               
-                
+
+
             }
 
             //Atualizar os registros do Grid ao carregar o form
@@ -168,6 +185,7 @@ namespace ProjetoCesgranrioExame
             textEmail.Text = "";
             textDataNascimento.Text = "";
         }
+
+
     }
-    
 }
