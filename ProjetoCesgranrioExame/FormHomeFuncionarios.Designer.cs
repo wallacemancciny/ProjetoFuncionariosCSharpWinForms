@@ -61,7 +61,6 @@ namespace ProjetoCesgranrioExame
             this.textDependente1 = new System.Windows.Forms.TextBox();
             this.textDependente2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.LabelTestarUltimoID = new System.Windows.Forms.Label();
             this.textIdDependenteFuncionario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSet)).BeginInit();
@@ -358,15 +357,6 @@ namespace ProjetoCesgranrioExame
             this.label10.Text = "Dependente 2";
             this.label10.UseWaitCursor = true;
             // 
-            // LabelTestarUltimoID
-            // 
-            this.LabelTestarUltimoID.AutoSize = true;
-            this.LabelTestarUltimoID.Location = new System.Drawing.Point(147, 411);
-            this.LabelTestarUltimoID.Name = "LabelTestarUltimoID";
-            this.LabelTestarUltimoID.Size = new System.Drawing.Size(41, 13);
-            this.LabelTestarUltimoID.TabIndex = 16;
-            this.LabelTestarUltimoID.Text = "label11";
-            // 
             // textIdDependenteFuncionario
             // 
             this.textIdDependenteFuncionario.Location = new System.Drawing.Point(380, 267);
@@ -381,7 +371,6 @@ namespace ProjetoCesgranrioExame
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1035, 550);
             this.Controls.Add(this.textIdDependenteFuncionario);
-            this.Controls.Add(this.LabelTestarUltimoID);
             this.Controls.Add(this.textDependente2);
             this.Controls.Add(this.textDependente1);
             this.Controls.Add(this.btnLimparPesquisa);
@@ -454,7 +443,6 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.TextBox textDependente1;
         private System.Windows.Forms.TextBox textDependente2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label LabelTestarUltimoID;
         private System.Windows.Forms.TextBox textIdDependenteFuncionario;
     }
 }

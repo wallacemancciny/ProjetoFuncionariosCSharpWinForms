@@ -40,7 +40,6 @@ namespace ProjetoCesgranrioExame
             this.textGestor = new System.Windows.Forms.TextBox();
             this.btnDeletarDepartamento = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.BtnTestar = new System.Windows.Forms.Button();
             this.textIdDepartamento = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDepartamento)).BeginInit();
             this.SuspendLayout();
@@ -145,16 +144,6 @@ namespace ProjetoCesgranrioExame
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // BtnTestar
-            // 
-            this.BtnTestar.Location = new System.Drawing.Point(88, 386);
-            this.BtnTestar.Name = "BtnTestar";
-            this.BtnTestar.Size = new System.Drawing.Size(75, 23);
-            this.BtnTestar.TabIndex = 9;
-            this.BtnTestar.Text = "Testar";
-            this.BtnTestar.UseVisualStyleBackColor = true;
-            this.BtnTestar.Click += new System.EventHandler(this.BtnTestar_Click);
-            // 
             // textIdDepartamento
             // 
             this.textIdDepartamento.Location = new System.Drawing.Point(88, 100);
@@ -169,7 +158,6 @@ namespace ProjetoCesgranrioExame
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(986, 450);
             this.Controls.Add(this.textIdDepartamento);
-            this.Controls.Add(this.BtnTestar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnDeletarDepartamento);
             this.Controls.Add(this.btnSalvar);
@@ -203,7 +191,6 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.TextBox textGestor;
         private System.Windows.Forms.Button btnDeletarDepartamento;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Button BtnTestar;
         private System.Windows.Forms.TextBox textIdDepartamento;
     }
 }

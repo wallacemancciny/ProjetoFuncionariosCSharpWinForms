@@ -47,6 +47,7 @@ namespace ProjetoCesgranrioExame
 
         private void FormDepartamento_Load(object sender, EventArgs e)
         {
+            textIdDepartamento.Hide();
             dataGridViewDepartamento.DataSource = Depart.GetDepartamentosRecord();
         }
 
@@ -77,20 +78,35 @@ namespace ProjetoCesgranrioExame
                 MessageBox.Show("Você precisa selecionar um departamento antes de deletar!");
             } else
             {
-                Departamento deletarDep = new Departamento();
+                //LOGICA PRA VERIFICAR SE DEPARTAMENTO JÁ ESTA EM USO POR ALGUM FUCNIONARIO, SE TIVER ELE NÃO VAI DEIXAR DELETAR
+                //INSTANCIA DEPARTAMENTO
+                Departamento VerificaFKFuncionario = new Departamento();
+                //CONVERTE O ID DO DEPARTAMENTO PARA INTEIRO
                 int IdDepartamentoToInt = Convert.ToInt32(textIdDepartamento.Text);
-                deletarDep.DeletarDepartamento(IdDepartamentoToInt);
+                //CHAMA O METODO PRA VERIFICAR SE VOLTOU ALGUM VALOR, CASO TENHA VOLTADO É PORQUE ESTÁ EM USO.
+                VerificaFKFuncionario.VerificaDepartamentoEmUso(IdDepartamentoToInt);
 
-                MessageBox.Show(deletarDep.mensagem);
+                if (VerificaFKFuncionario.DepartamentoEmUso == true)
+                {
+                    MessageBox.Show("Este departamento já esta em uso e não pode ser deletado!");
 
-                //limpando os campos do form
-                textIdDepartamento.Text = "";
-                textName.Text = "";
-                textGestor.Text = "";
-                textDescricao.Text = "";
+                } else
+                {
+                    Departamento deletarDep = new Departamento();
+                    //int IdDepartamentoToInt = Convert.ToInt32(textIdDepartamento.Text);
+                    deletarDep.DeletarDepartamento(IdDepartamentoToInt);
 
-                //instanciando departamento pra carregar a gridview após salvar um dado
-                dataGridViewDepartamento.DataSource = deletarDep.GetDepartamentosRecord();
+                    MessageBox.Show(deletarDep.mensagem);
+
+                    //limpando os campos do form
+                    textIdDepartamento.Text = "";
+                    textName.Text = "";
+                    textGestor.Text = "";
+                    textDescricao.Text = "";
+
+                    //instanciando departamento pra carregar a gridview após salvar um dado
+                    dataGridViewDepartamento.DataSource = deletarDep.GetDepartamentosRecord();
+                }
             }
         }
 
@@ -102,21 +118,6 @@ namespace ProjetoCesgranrioExame
             textDescricao.Text = "";
         }
 
-        private void BtnTestar_Click(object sender, EventArgs e)
-        {
-            Departamento VerificaFKFuncionario = new Departamento();
-
-            int IdDepartamentoToInt = Convert.ToInt32(textIdDepartamento.Text);
-            VerificaFKFuncionario.VerificaDepartamentoEmUso(IdDepartamentoToInt);
-
-            if (VerificaFKFuncionario.DepartamentoEmUso == true)
-            {
-                MessageBox.Show("Este departamento já esta em uso e não pode ser deletado!");
-            }
-
-            
-            
-
-        }
+        
     }
 }
