@@ -13,12 +13,13 @@ namespace ProjetoCesgranrioExame
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
         public String mensagem = "";
+        public String UltimoIdFuncionarioInserido = "";
 
         public void CadastrarFuncionario(String Nome, String CPF, String Telefone, String Email, String DataNascimento, int IdDepartamento)
         {
 
             //Comando Sql
-            cmd.CommandText = "insert into Funcionarios(Nome,CPF,Telefone,Email,DataNascimento,DepartamentoId) values(@Nome,@CPF,@Telefone,@Email,@DataNascimento,@IdDepartamento)";
+            cmd.CommandText = "insert into Funcionarios(Nome,CPF,Telefone,Email,DataNascimento,DepartamentoId) values(@Nome,@CPF,@Telefone,@Email,@DataNascimento,@IdDepartamento) SELECT SCOPE_IDENTITY()";
             //parametros
             cmd.Parameters.AddWithValue("@Nome", Nome);
             cmd.Parameters.AddWithValue("@CPF", CPF);
@@ -26,17 +27,25 @@ namespace ProjetoCesgranrioExame
             cmd.Parameters.AddWithValue("@Email", Email);
             cmd.Parameters.AddWithValue("@DataNascimento", DataNascimento);
             cmd.Parameters.AddWithValue("@IdDepartamento", IdDepartamento);
+            
 
+            
             try
             {
                 //conectar com banco
                 cmd.Connection = conexao.conectar();
-                //executar comando
-                cmd.ExecuteNonQuery();
+                //executar comando, pega o ultimo id inserido na tabela e guarda na variavel last_insertid
+                int last_insertid = int.Parse(cmd.ExecuteScalar().ToString());
                 //desconectar
                 conexao.desconectar();
                 //mostrar mensagem de erro ou sucesso
                 this.mensagem = "Cadastrado com Sucesso!";
+                //this.mensagem = Convert.ToString(last_insertid);
+                string last_insert_String = Convert.ToString(last_insertid);
+                //return last_insert_String;
+                this.UltimoIdFuncionarioInserido = last_insert_String;
+
+              
             }
             catch (SqlException)
             {
@@ -44,6 +53,7 @@ namespace ProjetoCesgranrioExame
 
             }
 
+            
         }
 
         public DataTable GetFuncionariosRecord()

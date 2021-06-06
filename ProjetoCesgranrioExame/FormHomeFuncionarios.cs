@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 
 namespace ProjetoCesgranrioExame
@@ -17,7 +10,7 @@ namespace ProjetoCesgranrioExame
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
         public String mensagem = "";
-
+        
 
         public FormHomeFuncionarios()
         {
@@ -61,13 +54,27 @@ namespace ProjetoCesgranrioExame
                     //convertendo para Inteiro
                     int IdDepartamentoSelecionadoInt = Convert.ToInt32(IdDepartamentoSelecionadoString);
 
+                    //instancia classe funcionario e chama o metodo para cadastrar
                     Funcionario Funcionario = new Funcionario();
                     Funcionario.CadastrarFuncionario(textNomeCompleto.Text,textCPF.Text, textTelefone.Text, textEmail.Text, textDataNascimento.Text, IdDepartamentoSelecionadoInt);
+
+                    //Pega o ultimo ID inserido no banco após cadastramento do Funcionario
+                    string UltimaIdCad = Funcionario.UltimoIdFuncionarioInserido;
+                    //Converte ultimo id cadastradado para inteiro
+                    int UltimaIdCadToInt = Convert.ToInt32(UltimaIdCad);
+
+
+                    //instancia a classe dependente e chama o metodo para cadastrar
+                    Dependente cadDependente = new Dependente();
+                    cadDependente.CadastrarDependente(textDependente1.Text, textDependente2.Text, UltimaIdCadToInt);
+
                     textNomeCompleto.Text = "";
                     textCPF.Text = "";
                     textTelefone.Text = "";
                     textEmail.Text = "";
                     textDataNascimento.Text = "";
+                    textDependente1.Text = "";
+                    textDependente2.Text = "";
 
                     MessageBox.Show(Funcionario.mensagem);
                     dataGridViewHome.DataSource = Funcionario.GetFuncionariosRecord();
@@ -95,15 +102,7 @@ namespace ProjetoCesgranrioExame
             formdep.Show();
         }
 
-        private void ComboDepartamento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Funcionario Func = new Funcionario();
-            //Func.GetDepartamentosList();
-            //comboDepartamento.DataSource = Func.GetDepartamentosList();
-            //comboDepartamento.DisplayMember = "Nome";
-            //comboDepartamento.ValueMember = "Id";
-
-        }
+       
 
         private void comboDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -122,6 +121,7 @@ namespace ProjetoCesgranrioExame
 
         public void dataGridViewHome_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Ao clicar na celula do GRID o dado vai aparecer nos campos do formulario.
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow registroClicado = this.dataGridViewHome.Rows[e.RowIndex];
@@ -166,6 +166,8 @@ namespace ProjetoCesgranrioExame
                     textTelefone.Text = "";
                     textEmail.Text = "";
                     textDataNascimento.Text = "";
+                    textDependente1.Text = "";
+                    textDependente2.Text = "";
                     MessageBox.Show("Funcionario Deletado com sucesso!");
 
 
@@ -188,6 +190,8 @@ namespace ProjetoCesgranrioExame
             textTelefone.Text = "";
             textEmail.Text = "";
             textDataNascimento.Text = "";
+            textDependente1.Text = "";
+            textDependente2.Text = "";
         }
 
         private void btnPesquisarFuncionario_Click(object sender, EventArgs e)
@@ -204,5 +208,6 @@ namespace ProjetoCesgranrioExame
             Funcionario Funcionario = new Funcionario();
             dataGridViewHome.DataSource = Funcionario.GetFuncionariosRecord();
         }
+
     }
 }

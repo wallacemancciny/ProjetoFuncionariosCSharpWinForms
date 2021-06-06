@@ -57,6 +57,11 @@ namespace ProjetoCesgranrioExame
             this.label8 = new System.Windows.Forms.Label();
             this.textCPF = new System.Windows.Forms.TextBox();
             this.btnLimparPesquisa = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textDependente1 = new System.Windows.Forms.TextBox();
+            this.textDependente2 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.LabelTestarUltimoID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
@@ -67,7 +72,7 @@ namespace ProjetoCesgranrioExame
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(25, 88);
+            this.label1.Location = new System.Drawing.Point(25, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 13);
             this.label1.TabIndex = 0;
@@ -76,7 +81,7 @@ namespace ProjetoCesgranrioExame
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(28, 382);
+            this.btnSave.Location = new System.Drawing.Point(29, 311);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 6;
@@ -86,7 +91,7 @@ namespace ProjetoCesgranrioExame
             // 
             // textNomeCompleto
             // 
-            this.textNomeCompleto.Location = new System.Drawing.Point(30, 108);
+            this.textNomeCompleto.Location = new System.Drawing.Point(30, 81);
             this.textNomeCompleto.Name = "textNomeCompleto";
             this.textNomeCompleto.Size = new System.Drawing.Size(253, 20);
             this.textNomeCompleto.TabIndex = 1;
@@ -95,11 +100,11 @@ namespace ProjetoCesgranrioExame
             // 
             this.dataGridViewHome.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHome.Location = new System.Drawing.Point(500, 71);
+            this.dataGridViewHome.Location = new System.Drawing.Point(452, 71);
             this.dataGridViewHome.Name = "dataGridViewHome";
             this.dataGridViewHome.ReadOnly = true;
             this.dataGridViewHome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewHome.Size = new System.Drawing.Size(523, 452);
+            this.dataGridViewHome.Size = new System.Drawing.Size(571, 452);
             this.dataGridViewHome.TabIndex = 10;
             this.dataGridViewHome.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHome_CellContentClick);
             // 
@@ -108,7 +113,7 @@ namespace ProjetoCesgranrioExame
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(25, 178);
+            this.label2.Location = new System.Drawing.Point(205, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 0;
@@ -117,9 +122,9 @@ namespace ProjetoCesgranrioExame
             // 
             // textTelefone
             // 
-            this.textTelefone.Location = new System.Drawing.Point(28, 199);
+            this.textTelefone.Location = new System.Drawing.Point(208, 127);
             this.textTelefone.Name = "textTelefone";
-            this.textTelefone.Size = new System.Drawing.Size(253, 20);
+            this.textTelefone.Size = new System.Drawing.Size(165, 20);
             this.textTelefone.TabIndex = 2;
             // 
             // label3
@@ -127,7 +132,7 @@ namespace ProjetoCesgranrioExame
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(25, 223);
+            this.label3.Location = new System.Drawing.Point(27, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 0;
@@ -136,7 +141,7 @@ namespace ProjetoCesgranrioExame
             // 
             // textEmail
             // 
-            this.textEmail.Location = new System.Drawing.Point(28, 244);
+            this.textEmail.Location = new System.Drawing.Point(30, 173);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(253, 20);
             this.textEmail.TabIndex = 3;
@@ -146,7 +151,7 @@ namespace ProjetoCesgranrioExame
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(25, 268);
+            this.label4.Location = new System.Drawing.Point(284, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 13);
             this.label4.TabIndex = 0;
@@ -155,14 +160,14 @@ namespace ProjetoCesgranrioExame
             // 
             // textDataNascimento
             // 
-            this.textDataNascimento.Location = new System.Drawing.Point(28, 289);
+            this.textDataNascimento.Location = new System.Drawing.Point(287, 173);
             this.textDataNascimento.Name = "textDataNascimento";
-            this.textDataNascimento.Size = new System.Drawing.Size(253, 20);
+            this.textDataNascimento.Size = new System.Drawing.Size(86, 20);
             this.textDataNascimento.TabIndex = 4;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(118, 382);
+            this.btnDelete.Location = new System.Drawing.Point(119, 311);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 7;
@@ -172,7 +177,7 @@ namespace ProjetoCesgranrioExame
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(208, 382);
+            this.btnCancel.Location = new System.Drawing.Point(209, 311);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 8;
@@ -207,18 +212,18 @@ namespace ProjetoCesgranrioExame
             // 
             // BtnDepartamento
             // 
-            this.BtnDepartamento.Location = new System.Drawing.Point(28, 422);
+            this.BtnDepartamento.Location = new System.Drawing.Point(29, 351);
             this.BtnDepartamento.Name = "BtnDepartamento";
             this.BtnDepartamento.Size = new System.Drawing.Size(254, 23);
             this.BtnDepartamento.TabIndex = 9;
-            this.BtnDepartamento.Text = "Cadastrar Departamento";
+            this.BtnDepartamento.Text = "Gerenciar Departamento";
             this.BtnDepartamento.UseVisualStyleBackColor = true;
             this.BtnDepartamento.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // comboDepartamento
             // 
             this.comboDepartamento.FormattingEnabled = true;
-            this.comboDepartamento.Location = new System.Drawing.Point(28, 334);
+            this.comboDepartamento.Location = new System.Drawing.Point(28, 218);
             this.comboDepartamento.Name = "comboDepartamento";
             this.comboDepartamento.Size = new System.Drawing.Size(253, 21);
             this.comboDepartamento.TabIndex = 5;
@@ -229,7 +234,7 @@ namespace ProjetoCesgranrioExame
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(25, 313);
+            this.label6.Location = new System.Drawing.Point(25, 200);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
             this.label6.TabIndex = 0;
@@ -238,9 +243,9 @@ namespace ProjetoCesgranrioExame
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(287, 334);
+            this.btnAtualizar.Location = new System.Drawing.Point(287, 216);
             this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizar.Size = new System.Drawing.Size(86, 23);
             this.btnAtualizar.TabIndex = 11;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
@@ -248,10 +253,10 @@ namespace ProjetoCesgranrioExame
             // 
             // textIdFunc
             // 
-            this.textIdFunc.Location = new System.Drawing.Point(287, 108);
+            this.textIdFunc.Location = new System.Drawing.Point(287, 81);
             this.textIdFunc.Name = "textIdFunc";
             this.textIdFunc.ReadOnly = true;
-            this.textIdFunc.Size = new System.Drawing.Size(75, 20);
+            this.textIdFunc.Size = new System.Drawing.Size(86, 20);
             this.textIdFunc.TabIndex = 11;
             // 
             // label7
@@ -259,7 +264,7 @@ namespace ProjetoCesgranrioExame
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(284, 88);
+            this.label7.Location = new System.Drawing.Point(284, 61);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 0;
@@ -269,11 +274,12 @@ namespace ProjetoCesgranrioExame
             // textPesquisaFuncionario
             // 
             this.textPesquisaFuncionario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textPesquisaFuncionario.Location = new System.Drawing.Point(500, 28);
+            this.textPesquisaFuncionario.Location = new System.Drawing.Point(452, 28);
             this.textPesquisaFuncionario.Name = "textPesquisaFuncionario";
-            this.textPesquisaFuncionario.Size = new System.Drawing.Size(283, 20);
+            this.textPesquisaFuncionario.Size = new System.Drawing.Size(331, 20);
             this.textPesquisaFuncionario.TabIndex = 12;
             this.textPesquisaFuncionario.Text = "Digite um CPF";
+            
             // 
             // btnPesquisarFuncionario
             // 
@@ -290,7 +296,7 @@ namespace ProjetoCesgranrioExame
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(25, 133);
+            this.label8.Location = new System.Drawing.Point(25, 106);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 13);
             this.label8.TabIndex = 0;
@@ -299,9 +305,9 @@ namespace ProjetoCesgranrioExame
             // 
             // textCPF
             // 
-            this.textCPF.Location = new System.Drawing.Point(28, 154);
+            this.textCPF.Location = new System.Drawing.Point(28, 127);
             this.textCPF.Name = "textCPF";
-            this.textCPF.Size = new System.Drawing.Size(253, 20);
+            this.textCPF.Size = new System.Drawing.Size(174, 20);
             this.textCPF.TabIndex = 2;
             // 
             // btnLimparPesquisa
@@ -314,12 +320,62 @@ namespace ProjetoCesgranrioExame
             this.btnLimparPesquisa.UseVisualStyleBackColor = true;
             this.btnLimparPesquisa.Click += new System.EventHandler(this.btnLimparPesquisa_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(27, 251);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Dependente 1";
+            this.label9.UseWaitCursor = true;
+            // 
+            // textDependente1
+            // 
+            this.textDependente1.Location = new System.Drawing.Point(30, 267);
+            this.textDependente1.Name = "textDependente1";
+            this.textDependente1.Size = new System.Drawing.Size(172, 20);
+            this.textDependente1.TabIndex = 15;
+            // 
+            // textDependente2
+            // 
+            this.textDependente2.Location = new System.Drawing.Point(208, 267);
+            this.textDependente2.Name = "textDependente2";
+            this.textDependente2.Size = new System.Drawing.Size(165, 20);
+            this.textDependente2.TabIndex = 15;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(206, 251);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Dependente 2";
+            this.label10.UseWaitCursor = true;
+            // 
+            // LabelTestarUltimoID
+            // 
+            this.LabelTestarUltimoID.AutoSize = true;
+            this.LabelTestarUltimoID.Location = new System.Drawing.Point(147, 411);
+            this.LabelTestarUltimoID.Name = "LabelTestarUltimoID";
+            this.LabelTestarUltimoID.Size = new System.Drawing.Size(41, 13);
+            this.LabelTestarUltimoID.TabIndex = 16;
+            this.LabelTestarUltimoID.Text = "label11";
+            // 
             // FormHomeFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1035, 550);
+            this.Controls.Add(this.LabelTestarUltimoID);
+            this.Controls.Add(this.textDependente2);
+            this.Controls.Add(this.textDependente1);
             this.Controls.Add(this.btnLimparPesquisa);
             this.Controls.Add(this.btnPesquisarFuncionario);
             this.Controls.Add(this.textPesquisaFuncionario);
@@ -330,6 +386,8 @@ namespace ProjetoCesgranrioExame
             this.Controls.Add(this.dataGridViewHome);
             this.Controls.Add(this.textDataNascimento);
             this.Controls.Add(this.textEmail);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textCPF);
@@ -384,6 +442,11 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textCPF;
         private System.Windows.Forms.Button btnLimparPesquisa;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textDependente1;
+        private System.Windows.Forms.TextBox textDependente2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label LabelTestarUltimoID;
     }
 }
 
