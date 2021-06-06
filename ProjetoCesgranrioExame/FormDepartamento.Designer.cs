@@ -39,9 +39,9 @@ namespace ProjetoCesgranrioExame
             this.label4 = new System.Windows.Forms.Label();
             this.textGestor = new System.Windows.Forms.TextBox();
             this.btnDeletarDepartamento = new System.Windows.Forms.Button();
-            this.labIdDepartamento = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.BtnTestar = new System.Windows.Forms.Button();
+            this.textIdDepartamento = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDepartamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,14 +135,6 @@ namespace ProjetoCesgranrioExame
             this.btnDeletarDepartamento.UseVisualStyleBackColor = true;
             this.btnDeletarDepartamento.Click += new System.EventHandler(this.btnDeletarDepartamento_Click_1);
             // 
-            // labIdDepartamento
-            // 
-            this.labIdDepartamento.AutoSize = true;
-            this.labIdDepartamento.Location = new System.Drawing.Point(88, 102);
-            this.labIdDepartamento.Name = "labIdDepartamento";
-            this.labIdDepartamento.Size = new System.Drawing.Size(0, 13);
-            this.labIdDepartamento.TabIndex = 7;
-            // 
             // btnLimpar
             // 
             this.btnLimpar.Location = new System.Drawing.Point(271, 338);
@@ -163,15 +155,22 @@ namespace ProjetoCesgranrioExame
             this.BtnTestar.UseVisualStyleBackColor = true;
             this.BtnTestar.Click += new System.EventHandler(this.BtnTestar_Click);
             // 
+            // textIdDepartamento
+            // 
+            this.textIdDepartamento.Location = new System.Drawing.Point(88, 100);
+            this.textIdDepartamento.Name = "textIdDepartamento";
+            this.textIdDepartamento.Size = new System.Drawing.Size(100, 20);
+            this.textIdDepartamento.TabIndex = 10;
+            // 
             // FormDepartamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(986, 450);
+            this.Controls.Add(this.textIdDepartamento);
             this.Controls.Add(this.BtnTestar);
             this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.labIdDepartamento);
             this.Controls.Add(this.btnDeletarDepartamento);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.label3);
@@ -203,8 +202,8 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textGestor;
         private System.Windows.Forms.Button btnDeletarDepartamento;
-        private System.Windows.Forms.Label labIdDepartamento;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button BtnTestar;
+        private System.Windows.Forms.TextBox textIdDepartamento;
     }
 }

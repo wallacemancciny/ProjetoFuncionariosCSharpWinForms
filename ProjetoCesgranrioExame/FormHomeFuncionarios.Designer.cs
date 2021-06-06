@@ -62,6 +62,7 @@ namespace ProjetoCesgranrioExame
             this.textDependente2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.LabelTestarUltimoID = new System.Windows.Forms.Label();
+            this.textIdDependenteFuncionario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
@@ -279,7 +280,6 @@ namespace ProjetoCesgranrioExame
             this.textPesquisaFuncionario.Size = new System.Drawing.Size(331, 20);
             this.textPesquisaFuncionario.TabIndex = 12;
             this.textPesquisaFuncionario.Text = "Digite um CPF";
-            
             // 
             // btnPesquisarFuncionario
             // 
@@ -367,12 +367,20 @@ namespace ProjetoCesgranrioExame
             this.LabelTestarUltimoID.TabIndex = 16;
             this.LabelTestarUltimoID.Text = "label11";
             // 
+            // textIdDependenteFuncionario
+            // 
+            this.textIdDependenteFuncionario.Location = new System.Drawing.Point(380, 267);
+            this.textIdDependenteFuncionario.Name = "textIdDependenteFuncionario";
+            this.textIdDependenteFuncionario.Size = new System.Drawing.Size(66, 20);
+            this.textIdDependenteFuncionario.TabIndex = 17;
+            // 
             // FormHomeFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1035, 550);
+            this.Controls.Add(this.textIdDependenteFuncionario);
             this.Controls.Add(this.LabelTestarUltimoID);
             this.Controls.Add(this.textDependente2);
             this.Controls.Add(this.textDependente1);
@@ -447,6 +455,7 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.TextBox textDependente2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label LabelTestarUltimoID;
+        private System.Windows.Forms.TextBox textIdDependenteFuncionario;
     }
 }
 

@@ -10,7 +10,8 @@ namespace ProjetoCesgranrioExame
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
         public String mensagem = "";
-        
+        //public String idDependenteFuncionario = "";
+
 
         public FormHomeFuncionarios()
         {
@@ -21,6 +22,8 @@ namespace ProjetoCesgranrioExame
 
         private void FormHomeFuncionarios_Load(object sender, EventArgs e)
         {
+            //ESCONDER BOTÃO DO ID DO DEPENDENTEFUNCIONARIO
+            textIdDependenteFuncionario.Hide();
             //Atualizar os registros do Grid ao carregar o form
             Funcionario Funcionario = new Funcionario();
             dataGridViewHome.DataSource = Funcionario.GetFuncionariosRecord();
@@ -80,7 +83,8 @@ namespace ProjetoCesgranrioExame
                     dataGridViewHome.DataSource = Funcionario.GetFuncionariosRecord();
                 }
                 else
-                {
+                {   
+                    //CONDIÇÃO ATUALIZAR O FUNCIONARIO
                     //Pegando valor do combo box selecionado, convertendo e salvando em uma variavel
                     String IdDepartamentoSelecionadoString = Convert.ToString(comboDepartamento.SelectedValue);
                     //convertendo para Inteiro
@@ -91,6 +95,24 @@ namespace ProjetoCesgranrioExame
                     funcUpdate.atualizarFuncionarioPorId(textNomeCompleto.Text, textCPF.Text,textTelefone.Text, textEmail.Text, textDataNascimento.Text, IdFuncionarioInteiro, IdDepartamentoSelecionadoInt);
                     MessageBox.Show(funcUpdate.mensagem);
                     dataGridViewHome.DataSource = funcUpdate.GetFuncionariosRecord();
+
+                    //Se ID dependenteFuncionario tiver preenchido ele vai apenas atualizar, caso contrario ele vai criar os dependentes
+                    if (textIdDependenteFuncionario.Text != "")
+                    {
+                        //instancia a classe dependente e depois pega
+                        Dependente atualizaDependente = new Dependente();
+
+                        //Cadastra os dependentes no banco
+                        atualizaDependente.AtualizarDependente(textDependente1.Text, textDependente2.Text, IdFuncionarioInteiro);
+                        //aproveia o metodo funcUpdate pra atualizar a GRID
+                        dataGridViewHome.DataSource = funcUpdate.GetFuncionariosRecord();
+                    }
+                    else
+                    {
+                        Dependente criaDependente = new Dependente();
+                        criaDependente.CadastrarDependente(textDependente1.Text, textDependente2.Text, IdFuncionarioInteiro);
+                        dataGridViewHome.DataSource = funcUpdate.GetFuncionariosRecord();
+                    }
                 }
             }
 
@@ -128,7 +150,8 @@ namespace ProjetoCesgranrioExame
 
                 //
                 //string IdSelecionado = registro.Cells["Id"].Value.ToString();
-
+                //string idDependenteFuncionario = registroClicado.Cells["DependenteFuncionarioId"].Value.ToString();
+                textIdDependenteFuncionario.Text = registroClicado.Cells["DependenteFuncionarioId"].Value.ToString();
                 textIdFunc.Text = registroClicado.Cells["Id"].Value.ToString();
                 textNomeCompleto.Text = registroClicado.Cells["Nome"].Value.ToString();
                 textCPF.Text = registroClicado.Cells["CPF"].Value.ToString();

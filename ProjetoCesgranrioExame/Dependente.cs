@@ -40,6 +40,33 @@ namespace ProjetoCesgranrioExame
             }
 
         }
+
+        public void AtualizarDependente(String Nome1, String Nome2, int FuncionarioId)
+        {
+            //Comando Sql
+            cmd.CommandText = "update Dependentes set Nome1 = @Nome1, Nome2 = @Nome2 where FuncionarioId = @FuncionarioId";
+            //parametros
+            cmd.Parameters.AddWithValue("@Nome1", Nome1);
+            cmd.Parameters.AddWithValue("@Nome2", Nome2);
+            cmd.Parameters.AddWithValue("@FuncionarioId", FuncionarioId);
+
+            try
+            {
+                //conectar com banco
+                cmd.Connection = conexao.conectar();
+                //executar comando
+                cmd.ExecuteNonQuery();
+                //desconectar
+                conexao.desconectar();
+                //mostrar mensagem de erro ou sucesso
+                this.mensagem = "Dependente atualizado com Sucesso!";
+            }
+            catch (SqlException)
+            {
+                this.mensagem = "Erro ao se conectar com o banco de dados [CadastrarFuncionario]";
+
+            }
+        }
     }
 
     

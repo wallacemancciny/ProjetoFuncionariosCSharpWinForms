@@ -32,7 +32,7 @@ namespace ProjetoCesgranrioExame
                 MessageBox.Show(Dep.mensagem);
 
                 //limpando os campos
-                labIdDepartamento.Text = "";
+                textIdDepartamento.Text = "";
                 textName.Text = "";
                 textGestor.Text = "";
                 textDescricao.Text = "";
@@ -59,7 +59,7 @@ namespace ProjetoCesgranrioExame
                 //variavel que está guardando o id do departamento clicado no GRID
                 string IdSelecionado = registroClicado.Cells["Id"].Value.ToString();
                 //Esses registros estão sendo populados para dentro dos textbox do form
-                labIdDepartamento.Text = registroClicado.Cells["Id"].Value.ToString();
+                textIdDepartamento.Text = registroClicado.Cells["Id"].Value.ToString();
                 textName.Text = registroClicado.Cells["Nome"].Value.ToString();
                 textGestor.Text = registroClicado.Cells["Gestor"].Value.ToString();
                 textDescricao .Text = registroClicado.Cells["Descricao"].Value.ToString();
@@ -72,19 +72,19 @@ namespace ProjetoCesgranrioExame
         
         private void btnDeletarDepartamento_Click_1(object sender, EventArgs e)
         {
-            if (labIdDepartamento.Text == "")
+            if (textIdDepartamento.Text == "")
             {
                 MessageBox.Show("Você precisa selecionar um departamento antes de deletar!");
             } else
             {
                 Departamento deletarDep = new Departamento();
-                int IdDepartamentoToInt = Convert.ToInt32(labIdDepartamento.Text);
+                int IdDepartamentoToInt = Convert.ToInt32(textIdDepartamento.Text);
                 deletarDep.DeletarDepartamento(IdDepartamentoToInt);
 
                 MessageBox.Show(deletarDep.mensagem);
 
                 //limpando os campos do form
-                labIdDepartamento.Text = "";
+                textIdDepartamento.Text = "";
                 textName.Text = "";
                 textGestor.Text = "";
                 textDescricao.Text = "";
@@ -96,7 +96,7 @@ namespace ProjetoCesgranrioExame
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            labIdDepartamento.Text = "";
+            textIdDepartamento.Text = "";
             textName.Text = "";
             textGestor.Text = "";
             textDescricao.Text = "";
@@ -105,8 +105,17 @@ namespace ProjetoCesgranrioExame
         private void BtnTestar_Click(object sender, EventArgs e)
         {
             Departamento VerificaFKFuncionario = new Departamento();
+
+            int IdDepartamentoToInt = Convert.ToInt32(textIdDepartamento.Text);
+            VerificaFKFuncionario.VerificaDepartamentoEmUso(IdDepartamentoToInt);
+
+            if (VerificaFKFuncionario.DepartamentoEmUso == true)
+            {
+                MessageBox.Show("Este departamento já esta em uso e não pode ser deletado!");
+            }
+
             
-            //MessageBox.Show(VerificaFKFuncionario.DepartamentoEmUso());
+            
 
         }
     }

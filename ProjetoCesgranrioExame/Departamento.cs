@@ -13,6 +13,7 @@ namespace ProjetoCesgranrioExame
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
         public String mensagem = "";
+        public bool DepartamentoEmUso = false;
 
         public void CadastrarDepartamento(String Nome, String Gestor, String Descricao)
         {
@@ -82,18 +83,47 @@ namespace ProjetoCesgranrioExame
             }
         }
 
-        public DataTable DepartamentoEmUso(int FuncionarioId)
+        public void VerificaDepartamentoEmUso(int FuncionarioId)
+        {
+            //Comando Sql
+            cmd.CommandText = "select top(1) DepartamentoId from Funcionarios where  DepartamentoId = @FuncionarioId";
+            //parametros
+            cmd.Parameters.AddWithValue("@FuncionarioId", FuncionarioId);
+            
+
+
+
+            try
+            {   //TENTA VERIFICAR SE A TABELA DEPARTAMENTO ESTÁ SENDO UTILIZADA NA TABELA FUNCIONARIOS.
+                //Se filtrar pelo id do departamento e chegar valor é porque está em uso.
+                //conectar com banco
+                cmd.Connection = conexao.conectar();
+                
+                cmd.ExecuteNonQuery();
+                //executa query e retorna numeros de linhas afetadas
+                //string buscaIdFuncionario = cmd.ExecuteNonQuery().ToString();
+
+                SqlDataReader ex = cmd.ExecuteReader();
+                
+
+                if (ex.HasRows == true ) 
+                {
+                    this.DepartamentoEmUso = true;
+                    this.mensagem = "Departamento está em uso!";
+                } else
+                {
+                    this.mensagem = "Departamento nunca usado!";
+                }
+
+                //desconectar
+                conexao.desconectar();
+
+            }
+            catch (SqlException)
             {
-            SqlCommand cmd = new SqlCommand("select * from Departamentos order by Id desc", conexao.conectar());
-            DataTable dt = new DataTable();
+                this.mensagem = "Erro ao se conectar com o banco de dados [VerificaDepartamentoEmUso]";
 
-            conexao.conectar();
-
-            SqlDataReader sdr = cmd.ExecuteReader();
-            dt.Load(sdr);
-            conexao.desconectar();
-
-            return dt;
+            }
         }
 
         
