@@ -59,7 +59,8 @@ namespace ProjetoCesgranrioExame
         public DataTable GetFuncionariosRecord()
         {
             
-            SqlCommand cmd = new SqlCommand("select * from Funcionarios order by Id desc", conexao.conectar());
+            SqlCommand cmd = new SqlCommand
+                ("select F.*, D.Nome1 AS Dependente1,D.Nome2 AS Dependente2, DP.Nome AS Departamento from Funcionarios as F left join Dependentes as D On F.Id = D.FuncionarioId LEFT JOIN Departamentos as DP on F.DepartamentoId = DP.Id order by F.Id desc", conexao.conectar());
             DataTable dt = new DataTable();
 
             conexao.conectar();

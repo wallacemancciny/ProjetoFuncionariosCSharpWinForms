@@ -136,7 +136,9 @@ namespace ProjetoCesgranrioExame
                 textEmail.Text = registroClicado.Cells["Email"].Value.ToString();
                 textDataNascimento.Text = registroClicado.Cells["DataNascimento"].Value.ToString();
                 comboDepartamento.Text = registroClicado.Cells["DepartamentoId"].Value.ToString();
-                
+                textDependente1.Text = registroClicado.Cells["Dependente1"].Value.ToString();
+                textDependente2.Text = registroClicado.Cells["Dependente2"].Value.ToString();
+
 
                 //Testar pra saber se está trazendo o ID correto
                 //MessageBox.Show(IdSelecionado);
