@@ -9,3 +9,14 @@ D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csproj.CoreCompileInputs.cache
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.exe
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.pdb
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.exe.config
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.exe
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.pdb
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csprojAssemblyReference.cache
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.FormDepartamento.resources
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.FormHomeFuncionarios.resources
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.Properties.Resources.resources
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csproj.GenerateResource.cache
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csproj.CoreCompileInputs.cache
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.exe
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.pdb

@@ -22,11 +22,14 @@ namespace ProjetoCesgranrioExame
 
         private void FormHomeFuncionarios_Load(object sender, EventArgs e)
         {
-            //ESCONDER BOTÃO DO ID DO DEPENDENTEFUNCIONARIO
-            textIdDependenteFuncionario.Hide();
-            //Atualizar os registros do Grid ao carregar o form
-            Funcionario Funcionario = new Funcionario();
-            dataGridViewHome.DataSource = Funcionario.GetFuncionariosRecord();
+            ////ESCONDER BOTÃO DO ID DO DEPENDENTEFUNCIONARIO
+            //textIdDependenteFuncionario.Hide();
+            ////Atualizar os registros do Grid ao carregar o form
+            //Funcionario Funcionario = new Funcionario();
+            //dataGridViewHome.DataSource = Funcionario.GetFuncionariosRecord();
+
+            AtualizarGrid();
+
 
             //Metodo para listar os items do Departamento no combobox
             Funcionario Func = new Funcionario();
@@ -34,6 +37,23 @@ namespace ProjetoCesgranrioExame
             comboDepartamento.DataSource = Func.GetDepartamentosList();
             comboDepartamento.ValueMember = "Id";
             comboDepartamento.DisplayMember = "Nome";
+
+
+
+        }
+
+        public void AtualizarGrid()
+        {
+            //ADD COLUNAS
+            dataGridViewHome.ColumnCount = 3;
+            dataGridViewHome.Columns[0].Name = "Nome";
+            dataGridViewHome.Columns[1].Name = "CPF";
+
+            //ADD REGISTROS
+            Funcionario Funcionario = new Funcionario();
+            dataGridViewHome.DataSource = Funcionario.GetFuncionariosRecord();
+            //DataGridView row = Data
+
 
 
 
@@ -55,6 +75,7 @@ namespace ProjetoCesgranrioExame
                     //Pegando valor do combo box selecionado, convertendo e salvando em uma variavel
                     String IdDepartamentoSelecionadoString = Convert.ToString(comboDepartamento.SelectedValue);
                     //convertendo para Inteiro
+                    
                     int IdDepartamentoSelecionadoInt = Convert.ToInt32(IdDepartamentoSelecionadoString);
 
                     //instancia classe funcionario e chama o metodo para cadastrar

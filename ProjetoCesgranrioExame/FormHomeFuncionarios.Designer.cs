@@ -63,9 +63,13 @@ namespace ProjetoCesgranrioExame
             this.label10 = new System.Windows.Forms.Label();
             this.textIdDependenteFuncionario = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.funcionariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cesgranrioTestDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -376,6 +380,16 @@ namespace ProjetoCesgranrioExame
             this.label11.TabIndex = 18;
             this.label11.Text = "(!) Dê dois cliques na grid para carregar os dados do funcionário";
             // 
+            // funcionariosBindingSource1
+            // 
+            this.funcionariosBindingSource1.DataMember = "Funcionarios";
+            this.funcionariosBindingSource1.DataSource = this.cesgranrioTestDBDataSet;
+            // 
+            // cesgranrioTestDBDataSetBindingSource
+            // 
+            this.cesgranrioTestDBDataSetBindingSource.DataSource = this.cesgranrioTestDBDataSet;
+            this.cesgranrioTestDBDataSetBindingSource.Position = 0;
+            // 
             // FormHomeFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,6 +432,8 @@ namespace ProjetoCesgranrioExame
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,6 +474,8 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textIdDependenteFuncionario;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.BindingSource funcionariosBindingSource1;
+        private System.Windows.Forms.BindingSource cesgranrioTestDBDataSetBindingSource;
     }
 }
 
