@@ -62,6 +62,7 @@ namespace ProjetoCesgranrioExame
             this.textDependente2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textIdDependenteFuncionario = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
@@ -84,7 +85,7 @@ namespace ProjetoCesgranrioExame
             this.btnSave.Location = new System.Drawing.Point(29, 311);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 6;
+            this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Salvar";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -105,7 +106,7 @@ namespace ProjetoCesgranrioExame
             this.dataGridViewHome.ReadOnly = true;
             this.dataGridViewHome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewHome.Size = new System.Drawing.Size(571, 452);
-            this.dataGridViewHome.TabIndex = 10;
+            this.dataGridViewHome.TabIndex = 17;
             this.dataGridViewHome.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHome_CellContentClick);
             // 
             // label2
@@ -125,7 +126,7 @@ namespace ProjetoCesgranrioExame
             this.textTelefone.Location = new System.Drawing.Point(208, 127);
             this.textTelefone.Name = "textTelefone";
             this.textTelefone.Size = new System.Drawing.Size(165, 20);
-            this.textTelefone.TabIndex = 2;
+            this.textTelefone.TabIndex = 3;
             // 
             // label3
             // 
@@ -144,7 +145,7 @@ namespace ProjetoCesgranrioExame
             this.textEmail.Location = new System.Drawing.Point(30, 173);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(253, 20);
-            this.textEmail.TabIndex = 3;
+            this.textEmail.TabIndex = 4;
             // 
             // label4
             // 
@@ -163,14 +164,14 @@ namespace ProjetoCesgranrioExame
             this.textDataNascimento.Location = new System.Drawing.Point(287, 173);
             this.textDataNascimento.Name = "textDataNascimento";
             this.textDataNascimento.Size = new System.Drawing.Size(86, 20);
-            this.textDataNascimento.TabIndex = 4;
+            this.textDataNascimento.TabIndex = 5;
             // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(119, 311);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 7;
+            this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Deletar";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -180,7 +181,7 @@ namespace ProjetoCesgranrioExame
             this.btnCancel.Location = new System.Drawing.Point(209, 311);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Limpar";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -215,7 +216,7 @@ namespace ProjetoCesgranrioExame
             this.BtnDepartamento.Location = new System.Drawing.Point(29, 351);
             this.BtnDepartamento.Name = "BtnDepartamento";
             this.BtnDepartamento.Size = new System.Drawing.Size(254, 23);
-            this.BtnDepartamento.TabIndex = 9;
+            this.BtnDepartamento.TabIndex = 13;
             this.BtnDepartamento.Text = "Gerenciar Departamento";
             this.BtnDepartamento.UseVisualStyleBackColor = true;
             this.BtnDepartamento.Click += new System.EventHandler(this.button1_Click_1);
@@ -226,7 +227,7 @@ namespace ProjetoCesgranrioExame
             this.comboDepartamento.Location = new System.Drawing.Point(28, 218);
             this.comboDepartamento.Name = "comboDepartamento";
             this.comboDepartamento.Size = new System.Drawing.Size(253, 21);
-            this.comboDepartamento.TabIndex = 5;
+            this.comboDepartamento.TabIndex = 6;
             this.comboDepartamento.SelectedIndexChanged += new System.EventHandler(this.comboDepartamento_SelectedIndexChanged);
             // 
             // label6
@@ -246,7 +247,7 @@ namespace ProjetoCesgranrioExame
             this.btnAtualizar.Location = new System.Drawing.Point(287, 216);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(86, 23);
-            this.btnAtualizar.TabIndex = 11;
+            this.btnAtualizar.TabIndex = 7;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
@@ -257,7 +258,7 @@ namespace ProjetoCesgranrioExame
             this.textIdFunc.Name = "textIdFunc";
             this.textIdFunc.ReadOnly = true;
             this.textIdFunc.Size = new System.Drawing.Size(86, 20);
-            this.textIdFunc.TabIndex = 11;
+            this.textIdFunc.TabIndex = 18;
             // 
             // label7
             // 
@@ -277,15 +278,16 @@ namespace ProjetoCesgranrioExame
             this.textPesquisaFuncionario.Location = new System.Drawing.Point(452, 28);
             this.textPesquisaFuncionario.Name = "textPesquisaFuncionario";
             this.textPesquisaFuncionario.Size = new System.Drawing.Size(331, 20);
-            this.textPesquisaFuncionario.TabIndex = 12;
+            this.textPesquisaFuncionario.TabIndex = 14;
             this.textPesquisaFuncionario.Text = "Digite um CPF";
+            this.textPesquisaFuncionario.TextChanged += new System.EventHandler(this.textPesquisaFuncionario_TextChanged);
             // 
             // btnPesquisarFuncionario
             // 
             this.btnPesquisarFuncionario.Location = new System.Drawing.Point(798, 26);
             this.btnPesquisarFuncionario.Name = "btnPesquisarFuncionario";
             this.btnPesquisarFuncionario.Size = new System.Drawing.Size(75, 23);
-            this.btnPesquisarFuncionario.TabIndex = 13;
+            this.btnPesquisarFuncionario.TabIndex = 15;
             this.btnPesquisarFuncionario.Text = "Pesquisar";
             this.btnPesquisarFuncionario.UseVisualStyleBackColor = true;
             this.btnPesquisarFuncionario.Click += new System.EventHandler(this.btnPesquisarFuncionario_Click);
@@ -314,7 +316,7 @@ namespace ProjetoCesgranrioExame
             this.btnLimparPesquisa.Location = new System.Drawing.Point(893, 26);
             this.btnLimparPesquisa.Name = "btnLimparPesquisa";
             this.btnLimparPesquisa.Size = new System.Drawing.Size(130, 23);
-            this.btnLimparPesquisa.TabIndex = 14;
+            this.btnLimparPesquisa.TabIndex = 16;
             this.btnLimparPesquisa.Text = "Limpar Pesquisa";
             this.btnLimparPesquisa.UseVisualStyleBackColor = true;
             this.btnLimparPesquisa.Click += new System.EventHandler(this.btnLimparPesquisa_Click);
@@ -336,14 +338,14 @@ namespace ProjetoCesgranrioExame
             this.textDependente1.Location = new System.Drawing.Point(30, 267);
             this.textDependente1.Name = "textDependente1";
             this.textDependente1.Size = new System.Drawing.Size(172, 20);
-            this.textDependente1.TabIndex = 15;
+            this.textDependente1.TabIndex = 8;
             // 
             // textDependente2
             // 
             this.textDependente2.Location = new System.Drawing.Point(208, 267);
             this.textDependente2.Name = "textDependente2";
             this.textDependente2.Size = new System.Drawing.Size(165, 20);
-            this.textDependente2.TabIndex = 15;
+            this.textDependente2.TabIndex = 9;
             // 
             // label10
             // 
@@ -364,12 +366,23 @@ namespace ProjetoCesgranrioExame
             this.textIdDependenteFuncionario.Size = new System.Drawing.Size(66, 20);
             this.textIdDependenteFuncionario.TabIndex = 17;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Khaki;
+            this.label11.Location = new System.Drawing.Point(452, 52);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(308, 13);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "(!) Dê dois cliques na grid para carregar os dados do funcionário";
+            // 
             // FormHomeFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1035, 550);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.textIdDependenteFuncionario);
             this.Controls.Add(this.textDependente2);
             this.Controls.Add(this.textDependente1);
@@ -444,6 +457,7 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.TextBox textDependente2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textIdDependenteFuncionario;
+        private System.Windows.Forms.Label label11;
     }
 }
 

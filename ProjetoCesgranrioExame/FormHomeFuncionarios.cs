@@ -234,5 +234,9 @@ namespace ProjetoCesgranrioExame
             dataGridViewHome.DataSource = Funcionario.GetFuncionariosRecord();
         }
 
+        private void textPesquisaFuncionario_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

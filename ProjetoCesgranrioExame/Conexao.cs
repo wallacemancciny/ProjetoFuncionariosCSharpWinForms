@@ -13,11 +13,18 @@ namespace ProjetoCesgranrioExame
 
         //Construtor
         public Conexao()
-        {
-            con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;
-            Initial Catalog=CesgranrioTestDB;Integrated Security=True;
-            Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;
-            ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        {   
+            //CONEXAO LOCAL
+            //con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;
+            //Initial Catalog=CesgranrioTestDB;Integrated Security=True;
+            //Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;
+            //ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            
+            //CONEXAO NA AZURE SQL SERVER
+            con.ConnectionString = "Data Source=serverdbwallacemanccinyazure.database.windows.net;" +
+                "Initial Catalog=dbAzureWallaceExame;User ID=wallroot;Password=Brna@7171;" +
+                "Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;" +
+                "ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         }
 
 
