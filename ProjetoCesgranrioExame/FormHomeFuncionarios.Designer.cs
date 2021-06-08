@@ -65,6 +65,7 @@ namespace ProjetoCesgranrioExame
             this.label11 = new System.Windows.Forms.Label();
             this.funcionariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cesgranrioTestDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
@@ -260,7 +261,6 @@ namespace ProjetoCesgranrioExame
             // 
             this.textIdFunc.Location = new System.Drawing.Point(287, 81);
             this.textIdFunc.Name = "textIdFunc";
-            this.textIdFunc.ReadOnly = true;
             this.textIdFunc.Size = new System.Drawing.Size(86, 20);
             this.textIdFunc.TabIndex = 18;
             // 
@@ -390,6 +390,11 @@ namespace ProjetoCesgranrioExame
             this.cesgranrioTestDBDataSetBindingSource.DataSource = this.cesgranrioTestDBDataSet;
             this.cesgranrioTestDBDataSetBindingSource.Position = 0;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // FormHomeFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,6 +481,7 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.BindingSource funcionariosBindingSource1;
         private System.Windows.Forms.BindingSource cesgranrioTestDBDataSetBindingSource;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
