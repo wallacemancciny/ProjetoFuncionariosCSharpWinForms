@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -22,6 +23,17 @@ namespace ProjetoCesgranrioExame
 
         private void FormHomeFuncionarios_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow registroDeDado in dataGridViewHome.Rows)
+            {
+                if (registroDeDado.Cells[1].Value.Equals("Leo"))
+                {
+                   registroDeDado.Cells[1].Style.Font = new System.Drawing.Font(dataGridViewHome.Font, System.Drawing.FontStyle.Bold);
+                   registroDeDado.Cells[1].Style.BackColor = Color.Red;
+
+                }
+            }
+
+
 
             //ESCONDER O ID DO FUNCIONARIO
             textIdFunc.Hide();
@@ -277,11 +289,10 @@ namespace ProjetoCesgranrioExame
         {
             if (e.ColumnIndex >= 0)
 
-                //DataGridViewRow registroClicado = this.dataGridViewHome.Rows[e.RowIndex];
+               
             {
                 int IdFuncionario = (int) dataGridViewHome.SelectedRows[0].Cells[0].Value;
 
-                //textNomeCompleto.Text = Convert.ToString(IdFuncionario);
 
                 Funcionario buscaFuncPorId = new Funcionario();
                 var dadosFuncionario = buscaFuncPorId.GetFuncionariosRecordById(IdFuncionario);
