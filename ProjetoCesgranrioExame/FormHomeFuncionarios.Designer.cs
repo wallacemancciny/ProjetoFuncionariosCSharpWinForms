@@ -51,7 +51,6 @@ namespace ProjetoCesgranrioExame
             this.label6 = new System.Windows.Forms.Label();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.textIdFunc = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.textPesquisaFuncionario = new System.Windows.Forms.TextBox();
             this.btnPesquisarFuncionario = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -104,12 +103,15 @@ namespace ProjetoCesgranrioExame
             // 
             // dataGridViewHome
             // 
+            this.dataGridViewHome.AllowUserToAddRows = false;
             this.dataGridViewHome.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHome.Location = new System.Drawing.Point(452, 71);
             this.dataGridViewHome.Name = "dataGridViewHome";
             this.dataGridViewHome.ReadOnly = true;
-            this.dataGridViewHome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridViewHome.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewHome.RowHeadersVisible = false;
+            this.dataGridViewHome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewHome.Size = new System.Drawing.Size(571, 452);
             this.dataGridViewHome.TabIndex = 17;
             this.dataGridViewHome.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHome_CellContentClick);
@@ -264,18 +266,6 @@ namespace ProjetoCesgranrioExame
             this.textIdFunc.Size = new System.Drawing.Size(86, 20);
             this.textIdFunc.TabIndex = 18;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(284, 61);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Matricula";
-            this.label7.UseWaitCursor = true;
-            // 
             // textPesquisaFuncionario
             // 
             this.textPesquisaFuncionario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -376,9 +366,8 @@ namespace ProjetoCesgranrioExame
             this.label11.BackColor = System.Drawing.Color.Khaki;
             this.label11.Location = new System.Drawing.Point(452, 52);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(308, 13);
+            this.label11.Size = new System.Drawing.Size(0, 13);
             this.label11.TabIndex = 18;
-            this.label11.Text = "(!) Dê dois cliques na grid para carregar os dados do funcionário";
             // 
             // funcionariosBindingSource1
             // 
@@ -429,7 +418,6 @@ namespace ProjetoCesgranrioExame
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Name = "FormHomeFuncionarios";
             this.Text = "Home - Gerenciamento de Funcionarios";
@@ -467,7 +455,6 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.TextBox textIdFunc;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textPesquisaFuncionario;
         private System.Windows.Forms.Button btnPesquisarFuncionario;
         private System.Windows.Forms.Label label8;

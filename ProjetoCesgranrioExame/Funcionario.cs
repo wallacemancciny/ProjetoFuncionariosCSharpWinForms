@@ -72,6 +72,26 @@ namespace ProjetoCesgranrioExame
             return dt;
             
         }
+
+        public DataTable GetFuncionariosRecordById(int FuncionarioId)
+        {
+
+            SqlCommand cmd = new SqlCommand
+            ("select top(1) F.*, D.FuncionarioId as DependenteFuncionarioId, D.Nome1 AS Dependente1,D.Nome2 AS Dependente2, DP.Nome AS Departamento from Funcionarios as F left join Dependentes as D On F.Id = D.FuncionarioId LEFT JOIN Departamentos as DP on F.DepartamentoId = DP.Id where F.Id = @FuncionarioId order by F.Id desc", conexao.conectar());
+
+            cmd.Parameters.AddWithValue("@FuncionarioId", FuncionarioId);
+
+            DataTable dt = new DataTable();
+
+            conexao.conectar();
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+            dt.Load(sdr);
+            conexao.desconectar();
+
+            return dt;
+
+        }
         public DataTable GetDepartamentosList()
         {
 

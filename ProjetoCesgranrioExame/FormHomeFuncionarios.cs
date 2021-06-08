@@ -22,8 +22,13 @@ namespace ProjetoCesgranrioExame
 
         private void FormHomeFuncionarios_Load(object sender, EventArgs e)
         {
+
+            //ESCONDER O ID DO FUNCIONARIO
+            textIdFunc.Hide();
             ////ESCONDER BOTÃO DO ID DO DEPENDENTEFUNCIONARIO
             textIdDependenteFuncionario.Hide();
+
+            
             ////Atualizar os registros do Grid ao carregar o form
             //Funcionario Funcionario = new Funcionario();
             //dataGridViewHome.DataSource = Funcionario.GetFuncionariosRecord();
@@ -70,15 +75,17 @@ namespace ProjetoCesgranrioExame
             //INSTANCIA A CLASSE QUE MANIPULA O BOTÃO NA GRID
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             //ADICIONA OS PARAMETROS DO BOTÃO
-            btn.HeaderText = "Acao";
+            btn.HeaderText = "";
             btn.Name = "btnSelectFunc";
             btn.Text = "Selecionar";
             btn.UseColumnTextForButtonValue = true;
+        
             dataGridViewHome.Columns.Add(btn);
 
 
-
         }
+
+
 
 
 
@@ -212,7 +219,12 @@ namespace ProjetoCesgranrioExame
                     textDataNascimento.Text = "";
                     textDependente1.Text = "";
                     textDependente2.Text = "";
+
+
+                    btnSave.Text = "Salvar";
+                    
                     MessageBox.Show("Funcionario Deletado com sucesso!");
+                    
 
 
                 }
@@ -228,6 +240,7 @@ namespace ProjetoCesgranrioExame
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            btnSave.Text = "Salvar";
 
             MessageBox.Show("Formulário limpo!");
             textIdFunc.Text = "";
@@ -262,6 +275,38 @@ namespace ProjetoCesgranrioExame
 
         public void dataGridViewHome_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex >= 0)
+
+                //DataGridViewRow registroClicado = this.dataGridViewHome.Rows[e.RowIndex];
+            {
+                int IdFuncionario = (int) dataGridViewHome.SelectedRows[0].Cells[0].Value;
+
+                //textNomeCompleto.Text = Convert.ToString(IdFuncionario);
+
+                Funcionario buscaFuncPorId = new Funcionario();
+                var dadosFuncionario = buscaFuncPorId.GetFuncionariosRecordById(IdFuncionario);
+                textCPF.Text = dadosFuncionario.Rows[0]["CPF"].ToString();
+                textDataNascimento.Text = dadosFuncionario.Rows[0]["DataNascimento"].ToString();
+                textEmail.Text = dadosFuncionario.Rows[0]["Email"].ToString();
+                textNomeCompleto.Text = dadosFuncionario.Rows[0]["Nome"].ToString();
+
+
+                textIdDependenteFuncionario.Text = dadosFuncionario.Rows[0]["DependenteFuncionarioId"].ToString();
+                textIdFunc.Text = dadosFuncionario.Rows[0]["Id"].ToString();
+                textNomeCompleto.Text = dadosFuncionario.Rows[0]["Nome"].ToString();
+                textCPF.Text = dadosFuncionario.Rows[0]["CPF"].ToString();
+                textTelefone.Text = dadosFuncionario.Rows[0]["Telefone"].ToString();
+                textEmail.Text = dadosFuncionario.Rows[0]["Email"].ToString();
+                textDataNascimento.Text = dadosFuncionario.Rows[0]["DataNascimento"].ToString();
+                comboDepartamento.Text = dadosFuncionario.Rows[0]["DepartamentoId"].ToString();
+                textDependente1.Text = dadosFuncionario.Rows[0]["Dependente1"].ToString();
+                textDependente2.Text = dadosFuncionario.Rows[0]["Dependente2"].ToString();
+
+                btnSave.Text = "Atualizar";
+
+            }
+            
+            
             ////Ao clicar na celula do GRID o dado vai aparecer nos campos do formulario.
             //if (e.RowIndex >= 0)
             //{
