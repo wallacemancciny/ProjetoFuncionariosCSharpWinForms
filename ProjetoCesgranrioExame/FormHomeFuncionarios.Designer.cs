@@ -30,7 +30,7 @@ namespace ProjetoCesgranrioExame
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.textNomeCompleto = new System.Windows.Forms.TextBox();
@@ -66,6 +66,7 @@ namespace ProjetoCesgranrioExame
             this.funcionariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cesgranrioTestDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnExportarTxt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
@@ -106,14 +107,14 @@ namespace ProjetoCesgranrioExame
             // 
             this.dataGridViewHome.AllowUserToAddRows = false;
             this.dataGridViewHome.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHome.Location = new System.Drawing.Point(452, 71);
             this.dataGridViewHome.Name = "dataGridViewHome";
@@ -121,7 +122,7 @@ namespace ProjetoCesgranrioExame
             this.dataGridViewHome.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewHome.RowHeadersVisible = false;
             this.dataGridViewHome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewHome.Size = new System.Drawing.Size(571, 452);
+            this.dataGridViewHome.Size = new System.Drawing.Size(571, 396);
             this.dataGridViewHome.TabIndex = 17;
             this.dataGridViewHome.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHome_CellContentClick);
             // 
@@ -393,12 +394,23 @@ namespace ProjetoCesgranrioExame
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // btnExportarTxt
+            // 
+            this.btnExportarTxt.Location = new System.Drawing.Point(452, 482);
+            this.btnExportarTxt.Name = "btnExportarTxt";
+            this.btnExportarTxt.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarTxt.TabIndex = 20;
+            this.btnExportarTxt.Text = "Exportar";
+            this.btnExportarTxt.UseVisualStyleBackColor = true;
+            this.btnExportarTxt.Click += new System.EventHandler(this.btnExportarTxt_Click);
+            // 
             // FormHomeFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1035, 550);
+            this.Controls.Add(this.btnExportarTxt);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textIdDependenteFuncionario);
             this.Controls.Add(this.textDependente2);
@@ -478,6 +490,7 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.BindingSource funcionariosBindingSource1;
         private System.Windows.Forms.BindingSource cesgranrioTestDBDataSetBindingSource;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button btnExportarTxt;
     }
 }
 

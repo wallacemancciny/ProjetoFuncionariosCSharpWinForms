@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 
@@ -22,9 +23,7 @@ namespace ProjetoCesgranrioExame
 
 
         private void FormHomeFuncionarios_Load(object sender, EventArgs e)
-        {
-            
-
+        { 
 
 
             //ESCONDER O ID DO FUNCIONARIO
@@ -326,35 +325,60 @@ namespace ProjetoCesgranrioExame
 
             }
             
-            
-            ////Ao clicar na celula do GRID o dado vai aparecer nos campos do formulario.
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow registroClicado = this.dataGridViewHome.Rows[e.RowIndex];
-
-            //    //
-            //    //string IdSelecionado = registro.Cells["Id"].Value.ToString();
-            //    //string idDependenteFuncionario = registroClicado.Cells["DependenteFuncionarioId"].Value.ToString();
-            //    textIdDependenteFuncionario.Text = registroClicado.Cells["DependenteFuncionarioId"].Value.ToString();
-            //    textIdFunc.Text = registroClicado.Cells["Id"].Value.ToString();
-            //    textNomeCompleto.Text = registroClicado.Cells["Nome"].Value.ToString();
-            //    textCPF.Text = registroClicado.Cells["CPF"].Value.ToString();
-            //    textTelefone.Text = registroClicado.Cells["Telefone"].Value.ToString();
-            //    textEmail.Text = registroClicado.Cells["Email"].Value.ToString();
-            //    textDataNascimento.Text = registroClicado.Cells["DataNascimento"].Value.ToString();
-            //    comboDepartamento.Text = registroClicado.Cells["DepartamentoId"].Value.ToString();
-            //    textDependente1.Text = registroClicado.Cells["Dependente1"].Value.ToString();
-            //    textDependente2.Text = registroClicado.Cells["Dependente2"].Value.ToString();
-
-            //MUDA O NOME DO BOTÃO SALVAR PARA ATUALIZAR
-            //    if (textIdFunc.Text != "")
-            //    {
-            //        btnSave.Text = "Atualizar";
-            //    }
-
-            //    //Testar pra saber se está trazendo o ID correto
-            //    //MessageBox.Show(IdSelecionado);
-            //}
         }
+
+
+        private void btnExportarTxt_Click(object sender, EventArgs e)
+        {
+
+            if (Directory.Exists(@"C:\folder\") && File.Exists("Text.txt"))
+            {
+
+                TextWriter writer = new StreamWriter(@"C:\folder\Text.txt");
+
+                for (int i = 0; i < dataGridViewHome.Rows.Count - 1; i++)
+                {
+                    //TENTATIVA DE FAZER O A COLUNA VIR
+                    //writer.Write("\t" + dataGridViewHome.Columns[i].HeaderText.ToString() + "\t" + ";");
+
+                    for (int c = 0; c < dataGridViewHome.Columns.Count; c++)
+
+                    {
+                        
+                        writer.Write("\t" + dataGridViewHome.Rows[i].Cells[c].Value.ToString() + "\t" + ";");
+                    }
+
+                    
+                    writer.WriteLine("");
+                    writer.WriteLine("---------------------------------------------------------------------------------------------------------------");
+                }
+                writer.Close();
+                MessageBox.Show("Tabela exportada com sucesso!");
+
+            } else
+            {
+                Directory.CreateDirectory(@"C:\folder\");
+                File.Create("Text.txt");
+
+                TextWriter writer = new StreamWriter(@"C:\folder\Text.txt");
+
+                for (int i = 0; i < dataGridViewHome.Rows.Count - 1; i++)
+                {
+
+                    for (int c = 0; c < dataGridViewHome.Columns.Count; c++)
+
+                    {
+                        writer.Write("\t" + dataGridViewHome.Rows[i].Cells[c].Value.ToString() + "\t" + ";");
+                    }
+
+                    writer.WriteLine("");
+                    writer.WriteLine("---------------------------------------------------------------------------------------------------------------");
+                }
+                writer.Close();
+                MessageBox.Show("Tabela exportada com sucesso!");
+            }
+            
+            
+         }
     }
 }
