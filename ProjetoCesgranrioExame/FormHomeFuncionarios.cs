@@ -23,15 +23,7 @@ namespace ProjetoCesgranrioExame
 
         private void FormHomeFuncionarios_Load(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow registroDeDado in dataGridViewHome.Rows)
-            {
-                if (registroDeDado.Cells[1].Value.Equals("Leo"))
-                {
-                   registroDeDado.Cells[1].Style.Font = new System.Drawing.Font(dataGridViewHome.Font, System.Drawing.FontStyle.Bold);
-                   registroDeDado.Cells[1].Style.BackColor = Color.Red;
-
-                }
-            }
+            
 
 
 
@@ -93,6 +85,23 @@ namespace ProjetoCesgranrioExame
             btn.UseColumnTextForButtonValue = true;
         
             dataGridViewHome.Columns.Add(btn);
+
+
+            foreach (DataGridViewRow registroDeDado in dataGridViewHome.Rows)
+            {
+
+                string registroTrim = registroDeDado.Cells[1].Value.ToString().Trim();
+                if (registroTrim.Substring(0, 1) == "a" || registroTrim.Substring(0, 1) == "A")
+                {
+                    //Font font = new Font(dataGridViewHome.Font, FontStyle.Regular);
+                    //registroDeDado.Cells[1].Style.Font = font = #FFFFF;
+                    registroDeDado.Cells[1].Style.BackColor = Color.Red;
+                   
+                    
+
+
+                }
+            }
 
 
         }
@@ -296,10 +305,10 @@ namespace ProjetoCesgranrioExame
 
                 Funcionario buscaFuncPorId = new Funcionario();
                 var dadosFuncionario = buscaFuncPorId.GetFuncionariosRecordById(IdFuncionario);
-                textCPF.Text = dadosFuncionario.Rows[0]["CPF"].ToString();
-                textDataNascimento.Text = dadosFuncionario.Rows[0]["DataNascimento"].ToString();
-                textEmail.Text = dadosFuncionario.Rows[0]["Email"].ToString();
-                textNomeCompleto.Text = dadosFuncionario.Rows[0]["Nome"].ToString();
+                //textCPF.Text = dadosFuncionario.Rows[0]["CPF"].ToString();
+                //textDataNascimento.Text = dadosFuncionario.Rows[0]["DataNascimento"].ToString();
+                //textEmail.Text = dadosFuncionario.Rows[0]["Email"].ToString();
+                //textNomeCompleto.Text = dadosFuncionario.Rows[0]["Nome"].ToString();
 
 
                 textIdDependenteFuncionario.Text = dadosFuncionario.Rows[0]["DependenteFuncionarioId"].ToString();
