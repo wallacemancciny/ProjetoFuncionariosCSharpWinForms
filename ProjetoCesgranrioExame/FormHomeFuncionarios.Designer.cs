@@ -30,7 +30,7 @@ namespace ProjetoCesgranrioExame
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.textNomeCompleto = new System.Windows.Forms.TextBox();
@@ -40,7 +40,6 @@ namespace ProjetoCesgranrioExame
             this.label3 = new System.Windows.Forms.Label();
             this.textEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textDataNascimento = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@ namespace ProjetoCesgranrioExame
             this.cesgranrioTestDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnExportarTxt = new System.Windows.Forms.Button();
+            this.maskTextDataNascimento = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
@@ -107,14 +107,14 @@ namespace ProjetoCesgranrioExame
             // 
             this.dataGridViewHome.AllowUserToAddRows = false;
             this.dataGridViewHome.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHome.Location = new System.Drawing.Point(452, 71);
             this.dataGridViewHome.Name = "dataGridViewHome";
@@ -175,13 +175,6 @@ namespace ProjetoCesgranrioExame
             this.label4.TabIndex = 0;
             this.label4.Text = "Data de Nascimento";
             this.label4.UseWaitCursor = true;
-            // 
-            // textDataNascimento
-            // 
-            this.textDataNascimento.Location = new System.Drawing.Point(287, 173);
-            this.textDataNascimento.Name = "textDataNascimento";
-            this.textDataNascimento.Size = new System.Drawing.Size(86, 20);
-            this.textDataNascimento.TabIndex = 5;
             // 
             // btnDelete
             // 
@@ -404,12 +397,22 @@ namespace ProjetoCesgranrioExame
             this.btnExportarTxt.UseVisualStyleBackColor = true;
             this.btnExportarTxt.Click += new System.EventHandler(this.btnExportarTxt_Click);
             // 
+            // maskTextDataNascimento
+            // 
+            this.maskTextDataNascimento.Location = new System.Drawing.Point(289, 173);
+            this.maskTextDataNascimento.Mask = "00/00/0000";
+            this.maskTextDataNascimento.Name = "maskTextDataNascimento";
+            this.maskTextDataNascimento.Size = new System.Drawing.Size(100, 20);
+            this.maskTextDataNascimento.TabIndex = 5;
+            this.maskTextDataNascimento.ValidatingType = typeof(System.DateTime);
+            // 
             // FormHomeFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1035, 550);
+            this.Controls.Add(this.maskTextDataNascimento);
             this.Controls.Add(this.btnExportarTxt);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textIdDependenteFuncionario);
@@ -423,7 +426,6 @@ namespace ProjetoCesgranrioExame
             this.Controls.Add(this.BtnDepartamento);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridViewHome);
-            this.Controls.Add(this.textDataNascimento);
             this.Controls.Add(this.textEmail);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -464,7 +466,6 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textDataNascimento;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label5;
@@ -491,6 +492,7 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.BindingSource cesgranrioTestDBDataSetBindingSource;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnExportarTxt;
+        private System.Windows.Forms.MaskedTextBox maskTextDataNascimento;
     }
 }
 

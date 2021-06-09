@@ -129,7 +129,7 @@ namespace ProjetoCesgranrioExame
 
                     //instancia classe funcionario e chama o metodo para cadastrar
                     Funcionario Funcionario = new Funcionario();
-                    Funcionario.CadastrarFuncionario(textNomeCompleto.Text,textCPF.Text, textTelefone.Text, textEmail.Text, textDataNascimento.Text, IdDepartamentoSelecionadoInt);
+                    Funcionario.CadastrarFuncionario(textNomeCompleto.Text,textCPF.Text, textTelefone.Text, textEmail.Text, maskTextDataNascimento.Text, IdDepartamentoSelecionadoInt);
 
                     //Pega o ultimo ID inserido no banco após cadastramento do Funcionario
                     string UltimaIdCad = Funcionario.UltimoIdFuncionarioInserido;
@@ -145,7 +145,7 @@ namespace ProjetoCesgranrioExame
                     textCPF.Text = "";
                     textTelefone.Text = "";
                     textEmail.Text = "";
-                    textDataNascimento.Text = "";
+                    maskTextDataNascimento.Text = "";
                     textDependente1.Text = "";
                     textDependente2.Text = "";
 
@@ -163,7 +163,7 @@ namespace ProjetoCesgranrioExame
                     //caso tenha Id do funcionario carregado no formulário ele vai atualizar apenas.
                     int IdFuncionarioInteiro = Convert.ToInt32(textIdFunc.Text);
                     Funcionario funcUpdate = new Funcionario();
-                    funcUpdate.atualizarFuncionarioPorId(textNomeCompleto.Text, textCPF.Text,textTelefone.Text, textEmail.Text, textDataNascimento.Text, IdFuncionarioInteiro, IdDepartamentoSelecionadoInt);
+                    funcUpdate.atualizarFuncionarioPorId(textNomeCompleto.Text, textCPF.Text,textTelefone.Text, textEmail.Text, maskTextDataNascimento.Text, IdFuncionarioInteiro, IdDepartamentoSelecionadoInt);
                     MessageBox.Show(funcUpdate.mensagem);
                     dataGridViewHome.DataSource = funcUpdate.GetFuncionariosRecord();
 
@@ -236,7 +236,7 @@ namespace ProjetoCesgranrioExame
                     textCPF.Text = "";
                     textTelefone.Text = "";
                     textEmail.Text = "";
-                    textDataNascimento.Text = "";
+                    maskTextDataNascimento.Text = "";
                     textDependente1.Text = "";
                     textDependente2.Text = "";
 
@@ -268,7 +268,7 @@ namespace ProjetoCesgranrioExame
             textCPF.Text = "";
             textTelefone.Text = "";
             textEmail.Text = "";
-            textDataNascimento.Text = "";
+            maskTextDataNascimento.Text = "";
             textDependente1.Text = "";
             textDependente2.Text = "";
         }
@@ -316,7 +316,7 @@ namespace ProjetoCesgranrioExame
                 textCPF.Text = dadosFuncionario.Rows[0]["CPF"].ToString();
                 textTelefone.Text = dadosFuncionario.Rows[0]["Telefone"].ToString();
                 textEmail.Text = dadosFuncionario.Rows[0]["Email"].ToString();
-                textDataNascimento.Text = dadosFuncionario.Rows[0]["DataNascimento"].ToString();
+                maskTextDataNascimento.Text = dadosFuncionario.Rows[0]["DataNascimento"].ToString();
                 comboDepartamento.Text = dadosFuncionario.Rows[0]["DepartamentoId"].ToString();
                 textDependente1.Text = dadosFuncionario.Rows[0]["Dependente1"].ToString();
                 textDependente2.Text = dadosFuncionario.Rows[0]["Dependente2"].ToString();
@@ -333,27 +333,35 @@ namespace ProjetoCesgranrioExame
 
             if (Directory.Exists(@"C:\folder\") && File.Exists("Text.txt"))
             {
-
                 TextWriter writer = new StreamWriter(@"C:\folder\Text.txt");
+
+
+                //writer.Write(dataGridViewHome.Columns[0].HeaderText = "Id");
+                writer.Write((dataGridViewHome.Columns[0].DataPropertyName = "Id") + ";");
+
+                //writer.Write(dataGridViewHome.Columns[1].HeaderText = "Nome");
+                writer.Write((dataGridViewHome.Columns[1].DataPropertyName = "Nome") + ";");
+
+                //writer.Write(dataGridViewHome.Columns[2].HeaderText = "CPF");
+                writer.Write((dataGridViewHome.Columns[2].DataPropertyName = "CPF") + ";");
+
+                //writer.Write(dataGridViewHome.Columns[3].HeaderText = "Telefone");
+                writer.Write((dataGridViewHome.Columns[3].DataPropertyName = "Telefone") + ";" + "\n");
+
 
                 for (int i = 0; i < dataGridViewHome.Rows.Count - 1; i++)
                 {
-                    //TENTATIVA DE FAZER O A COLUNA VIR
-                    //writer.Write("\t" + dataGridViewHome.Columns[i].HeaderText.ToString() + "\t" + ";");
-
                     for (int c = 0; c < dataGridViewHome.Columns.Count; c++)
 
-                    {
-                        
-                        writer.Write("\t" + dataGridViewHome.Rows[i].Cells[c].Value.ToString() + "\t" + ";");
+                    {       
+                        writer.Write(dataGridViewHome.Rows[i].Cells[c].Value.ToString() + ";");
                     }
-
-                    
+       
                     writer.WriteLine("");
-                    writer.WriteLine("---------------------------------------------------------------------------------------------------------------");
+                    
                 }
                 writer.Close();
-                MessageBox.Show("Tabela exportada com sucesso!");
+                MessageBox.Show(@"Tabela exportada com sucesso para C:\folder\Text.txt");
 
             } else
             {
