@@ -30,7 +30,7 @@ namespace ProjetoCesgranrioExame
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.textNomeCompleto = new System.Windows.Forms.TextBox();
@@ -54,7 +54,6 @@ namespace ProjetoCesgranrioExame
             this.textPesquisaFuncionario = new System.Windows.Forms.TextBox();
             this.btnPesquisarFuncionario = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textCPF = new System.Windows.Forms.TextBox();
             this.btnLimparPesquisa = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.textDependente1 = new System.Windows.Forms.TextBox();
@@ -67,6 +66,7 @@ namespace ProjetoCesgranrioExame
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnExportarTxt = new System.Windows.Forms.Button();
             this.maskTextDataNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextCPF = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
@@ -107,14 +107,14 @@ namespace ProjetoCesgranrioExame
             // 
             this.dataGridViewHome.AllowUserToAddRows = false;
             this.dataGridViewHome.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHome.Location = new System.Drawing.Point(452, 71);
             this.dataGridViewHome.Name = "dataGridViewHome";
@@ -301,13 +301,6 @@ namespace ProjetoCesgranrioExame
             this.label8.Text = "CPF *";
             this.label8.UseWaitCursor = true;
             // 
-            // textCPF
-            // 
-            this.textCPF.Location = new System.Drawing.Point(28, 127);
-            this.textCPF.Name = "textCPF";
-            this.textCPF.Size = new System.Drawing.Size(174, 20);
-            this.textCPF.TabIndex = 2;
-            // 
             // btnLimparPesquisa
             // 
             this.btnLimparPesquisa.Location = new System.Drawing.Point(893, 26);
@@ -391,7 +384,7 @@ namespace ProjetoCesgranrioExame
             // 
             this.btnExportarTxt.Location = new System.Drawing.Point(452, 482);
             this.btnExportarTxt.Name = "btnExportarTxt";
-            this.btnExportarTxt.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarTxt.Size = new System.Drawing.Size(123, 23);
             this.btnExportarTxt.TabIndex = 20;
             this.btnExportarTxt.Text = "Exportar";
             this.btnExportarTxt.UseVisualStyleBackColor = true;
@@ -406,12 +399,21 @@ namespace ProjetoCesgranrioExame
             this.maskTextDataNascimento.TabIndex = 5;
             this.maskTextDataNascimento.ValidatingType = typeof(System.DateTime);
             // 
+            // maskedTextCPF
+            // 
+            this.maskedTextCPF.Location = new System.Drawing.Point(30, 127);
+            this.maskedTextCPF.Mask = "000,000,000-00";
+            this.maskedTextCPF.Name = "maskedTextCPF";
+            this.maskedTextCPF.Size = new System.Drawing.Size(172, 20);
+            this.maskedTextCPF.TabIndex = 2;
+            // 
             // FormHomeFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1035, 550);
+            this.Controls.Add(this.maskedTextCPF);
             this.Controls.Add(this.maskTextDataNascimento);
             this.Controls.Add(this.btnExportarTxt);
             this.Controls.Add(this.label11);
@@ -431,7 +433,6 @@ namespace ProjetoCesgranrioExame
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textCPF);
             this.Controls.Add(this.textTelefone);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textIdFunc);
@@ -480,7 +481,6 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.TextBox textPesquisaFuncionario;
         private System.Windows.Forms.Button btnPesquisarFuncionario;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textCPF;
         private System.Windows.Forms.Button btnLimparPesquisa;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textDependente1;
@@ -493,6 +493,7 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnExportarTxt;
         private System.Windows.Forms.MaskedTextBox maskTextDataNascimento;
+        private System.Windows.Forms.MaskedTextBox maskedTextCPF;
     }
 }
 

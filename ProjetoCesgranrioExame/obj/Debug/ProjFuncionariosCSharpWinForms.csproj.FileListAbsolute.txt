@@ -12,7 +12,6 @@ D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.exe.config
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.exe
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.pdb
-C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csprojAssemblyReference.cache
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.FormDepartamento.resources
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.FormHomeFuncionarios.resources
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.Properties.Resources.resources
@@ -20,3 +19,7 @@ C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\Projet
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csproj.CoreCompileInputs.cache
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.exe
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.pdb
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.IndexForm.resources
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.GerenciarFuncionario.resources
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.WellcomeIndexControl.resources
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csprojAssemblyReference.cache

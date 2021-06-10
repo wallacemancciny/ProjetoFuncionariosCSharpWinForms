@@ -16,7 +16,7 @@ namespace ProjetoCesgranrioExame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormHomeFuncionarios());
+            Application.Run(new IndexForm());
         }
     }
 }
