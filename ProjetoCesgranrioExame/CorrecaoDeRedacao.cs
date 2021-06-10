@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjetoCesgranrioExame
 {
-    public partial class WellcomeIndexControl : UserControl
+    public partial class CorrecaoDeRedacao : UserControl
     {
-        public WellcomeIndexControl()
+        public CorrecaoDeRedacao()
         {
             InitializeComponent();
         }
-
-
     }
 }

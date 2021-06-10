@@ -13,7 +13,6 @@ C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\Projet
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.exe
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.pdb
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.FormDepartamento.resources
-C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.FormHomeFuncionarios.resources
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.Properties.Resources.resources
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csproj.GenerateResource.cache
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csproj.CoreCompileInputs.cache
@@ -22,4 +21,5 @@ C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\Projet
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.IndexForm.resources
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.GerenciarFuncionario.resources
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.WellcomeIndexControl.resources
-C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csprojAssemblyReference.cache
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.SimularGeracaoImagens.resources
+C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.CorrecaoDeRedacao.resources

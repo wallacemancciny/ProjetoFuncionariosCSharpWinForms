@@ -26,6 +26,9 @@ namespace ProjetoCesgranrioExame
         private void IndexForm_Load(object sender, EventArgs e)
         {
             gerenciarFuncionario.Hide();
+            gerenciarFuncionario.BringToFront();
+            simularGeracaoImagens1.Hide();
+            simularGeracaoImagens1.SendToBack();
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -35,5 +38,17 @@ namespace ProjetoCesgranrioExame
             
         }
 
+        private void wellcomeIndexControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simularGeraçãoDeImagensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gerenciarFuncionario.Hide();
+            wellcomeIndexControl1.Hide();
+            simularGeracaoImagens1.Show();
+
+        }
     }
 }

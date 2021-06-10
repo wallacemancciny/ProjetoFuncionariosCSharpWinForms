@@ -35,12 +35,16 @@ namespace ProjetoCesgranrioExame
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.correçãoDeProvaDeRedaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simularGeraçãoDeImagensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.corrigirRedaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.wellcomeIndexControl1 = new ProjetoCesgranrioExame.WellcomeIndexControl();
             this.gerenciarFuncionario = new ProjetoCesgranrioExame.GerenciarFuncionario();
+            this.simularGeracaoImagens1 = new ProjetoCesgranrioExame.SimularGeracaoImagens();
             this.contextMenuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -87,6 +91,13 @@ namespace ProjetoCesgranrioExame
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
+            // 
             // cadastroDeFuncionarioToolStripMenuItem
             // 
             this.cadastroDeFuncionarioToolStripMenuItem.Name = "cadastroDeFuncionarioToolStripMenuItem";
@@ -96,12 +107,17 @@ namespace ProjetoCesgranrioExame
             // 
             // correçãoDeProvaDeRedaçãoToolStripMenuItem
             // 
+            this.correçãoDeProvaDeRedaçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.corrigirRedaçãoToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.simularGeraçãoDeImagensToolStripMenuItem});
             this.correçãoDeProvaDeRedaçãoToolStripMenuItem.Name = "correçãoDeProvaDeRedaçãoToolStripMenuItem";
-            this.correçãoDeProvaDeRedaçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 20);
-            this.correçãoDeProvaDeRedaçãoToolStripMenuItem.Text = "Correção de Prova de Redação";
+            this.correçãoDeProvaDeRedaçãoToolStripMenuItem.Size = new System.Drawing.Size(194, 20);
+            this.correçãoDeProvaDeRedaçãoToolStripMenuItem.Text = "Correção de Imagem de Redação";
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.simularGeracaoImagens1);
             this.panel2.Controls.Add(this.wellcomeIndexControl1);
             this.panel2.Controls.Add(this.gerenciarFuncionario);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -110,12 +126,23 @@ namespace ProjetoCesgranrioExame
             this.panel2.Size = new System.Drawing.Size(1226, 624);
             this.panel2.TabIndex = 3;
             // 
-            // homeToolStripMenuItem
+            // simularGeraçãoDeImagensToolStripMenuItem
             // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.homeToolStripMenuItem.Text = "Home";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
+            this.simularGeraçãoDeImagensToolStripMenuItem.Name = "simularGeraçãoDeImagensToolStripMenuItem";
+            this.simularGeraçãoDeImagensToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.simularGeraçãoDeImagensToolStripMenuItem.Text = "Simular a geração de Imagens";
+            this.simularGeraçãoDeImagensToolStripMenuItem.Click += new System.EventHandler(this.simularGeraçãoDeImagensToolStripMenuItem_Click);
+            // 
+            // corrigirRedaçãoToolStripMenuItem
+            // 
+            this.corrigirRedaçãoToolStripMenuItem.Name = "corrigirRedaçãoToolStripMenuItem";
+            this.corrigirRedaçãoToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.corrigirRedaçãoToolStripMenuItem.Text = "Corrigir Imagem de Redação";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(229, 6);
             // 
             // wellcomeIndexControl1
             // 
@@ -131,6 +158,13 @@ namespace ProjetoCesgranrioExame
             this.gerenciarFuncionario.Name = "gerenciarFuncionario";
             this.gerenciarFuncionario.Size = new System.Drawing.Size(1226, 624);
             this.gerenciarFuncionario.TabIndex = 0;
+            // 
+            // simularGeracaoImagens1
+            // 
+            this.simularGeracaoImagens1.Location = new System.Drawing.Point(0, 0);
+            this.simularGeracaoImagens1.Name = "simularGeracaoImagens1";
+            this.simularGeracaoImagens1.Size = new System.Drawing.Size(1226, 624);
+            this.simularGeracaoImagens1.TabIndex = 2;
             // 
             // IndexForm
             // 
@@ -165,5 +199,9 @@ namespace ProjetoCesgranrioExame
         private GerenciarFuncionario gerenciarFuncionario;
         private WellcomeIndexControl wellcomeIndexControl1;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem corrigirRedaçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem simularGeraçãoDeImagensToolStripMenuItem;
+        private SimularGeracaoImagens simularGeracaoImagens1;
     }
 }

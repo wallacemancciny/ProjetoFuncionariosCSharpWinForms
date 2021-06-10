@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace ProjetoCesgranrioExame
 {
-    public partial class WellcomeIndexControl : UserControl
+    public partial class SimularGeracaoImagens : UserControl
     {
-        public WellcomeIndexControl()
+        public SimularGeracaoImagens()
         {
             InitializeComponent();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
