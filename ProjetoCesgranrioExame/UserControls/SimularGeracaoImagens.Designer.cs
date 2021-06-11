@@ -31,14 +31,15 @@ namespace ProjetoCesgranrioExame
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -54,14 +55,15 @@ namespace ProjetoCesgranrioExame
             this.label1.TabIndex = 0;
             this.label1.Text = "Informe a quantidade de Alunos";
             // 
-            // button1
+            // btnStart
             // 
-            this.button1.Location = new System.Drawing.Point(115, 181);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Gerar Alunos";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnStart.Location = new System.Drawing.Point(115, 181);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(154, 23);
+            this.btnStart.TabIndex = 1;
+            this.btnStart.Text = "Gerar Alunos";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -73,7 +75,7 @@ namespace ProjetoCesgranrioExame
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnStart);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(57, 145);
             this.groupBox1.Name = "groupBox1";
@@ -83,7 +85,8 @@ namespace ProjetoCesgranrioExame
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.progressBar1);
+            this.groupBox2.Controls.Add(this.lblStatus);
+            this.groupBox2.Controls.Add(this.progressBar);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(543, 145);
             this.groupBox2.Name = "groupBox2";
@@ -91,12 +94,12 @@ namespace ProjetoCesgranrioExame
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
-            // progressBar1
+            // progressBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(65, 116);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(495, 23);
-            this.progressBar1.TabIndex = 1;
+            this.progressBar.Location = new System.Drawing.Point(65, 116);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(495, 23);
+            this.progressBar.TabIndex = 1;
             // 
             // label2
             // 
@@ -107,7 +110,6 @@ namespace ProjetoCesgranrioExame
             this.label2.Size = new System.Drawing.Size(101, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Progresso:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // errorProvider1
             // 
@@ -122,6 +124,15 @@ namespace ProjetoCesgranrioExame
             this.label3.Size = new System.Drawing.Size(460, 37);
             this.label3.TabIndex = 5;
             this.label3.Text = "Simulador - Gerador de Alunos";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(158, 84);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(82, 13);
+            this.lblStatus.TabIndex = 2;
+            this.lblStatus.Text = "Processing...0%";
             // 
             // SimularGeracaoImagens
             // 
@@ -145,13 +156,14 @@ namespace ProjetoCesgranrioExame
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblStatus;
     }
 }

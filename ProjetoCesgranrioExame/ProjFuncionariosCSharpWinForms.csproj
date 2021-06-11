@@ -45,10 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="User Controls\CorrecaoDeRedacao.cs">
+    <Compile Include="Classes\Redacao.cs" />
+    <Compile Include="UserControls\CorrecaoDeRedacao.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\CorrecaoDeRedacao.Designer.cs">
+    <Compile Include="UserControls\CorrecaoDeRedacao.Designer.cs">
       <DependentUpon>CorrecaoDeRedacao.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Departamento.cs" />
@@ -66,10 +67,10 @@
       <DependentUpon>CesgranrioTestDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Classes\Conexao.cs" />
-    <Compile Include="User Controls\GerenciarFuncionario.cs">
+    <Compile Include="UserControls\GerenciarFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\GerenciarFuncionario.Designer.cs">
+    <Compile Include="UserControls\GerenciarFuncionario.Designer.cs">
       <DependentUpon>GerenciarFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Index\IndexForm.cs">
@@ -80,25 +81,25 @@
     </Compile>
     <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User Controls\SimularGeracaoImagens.cs">
+    <Compile Include="UserControls\SimularGeracaoImagens.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\SimularGeracaoImagens.Designer.cs">
+    <Compile Include="UserControls\SimularGeracaoImagens.Designer.cs">
       <DependentUpon>SimularGeracaoImagens.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\WellcomeIndexControl.cs">
+    <Compile Include="UserControls\WellcomeIndexControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\WellcomeIndexControl.Designer.cs">
+    <Compile Include="UserControls\WellcomeIndexControl.Designer.cs">
       <DependentUpon>WellcomeIndexControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="User Controls\CorrecaoDeRedacao.resx">
+    <EmbeddedResource Include="UserControls\CorrecaoDeRedacao.resx">
       <DependentUpon>CorrecaoDeRedacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDepartamento.resx">
       <DependentUpon>FormDepartamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\GerenciarFuncionario.resx">
+    <EmbeddedResource Include="UserControls\GerenciarFuncionario.resx">
       <DependentUpon>GerenciarFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index\IndexForm.resx">
@@ -113,10 +114,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="User Controls\SimularGeracaoImagens.resx">
+    <EmbeddedResource Include="UserControls\SimularGeracaoImagens.resx">
       <DependentUpon>SimularGeracaoImagens.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\WellcomeIndexControl.resx">
+    <EmbeddedResource Include="UserControls\WellcomeIndexControl.resx">
       <DependentUpon>WellcomeIndexControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CesgranrioTestDBDataSet.xsc">
