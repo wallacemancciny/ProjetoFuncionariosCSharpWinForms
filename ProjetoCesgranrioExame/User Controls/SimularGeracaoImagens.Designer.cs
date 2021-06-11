@@ -35,9 +35,10 @@ namespace ProjetoCesgranrioExame
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -59,7 +60,7 @@ namespace ProjetoCesgranrioExame
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Gerar";
+            this.button1.Text = "Gerar Alunos";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
@@ -90,6 +91,13 @@ namespace ProjetoCesgranrioExame
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(65, 116);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(495, 23);
+            this.progressBar1.TabIndex = 1;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -101,21 +109,25 @@ namespace ProjetoCesgranrioExame
             this.label2.Text = "Progresso:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(65, 116);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(495, 23);
-            this.progressBar1.TabIndex = 1;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(300, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(460, 37);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Simulador - Gerador de Alunos";
             // 
             // SimularGeracaoImagens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "SimularGeracaoImagens";
@@ -126,6 +138,7 @@ namespace ProjetoCesgranrioExame
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -139,5 +152,6 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label3;
     }
 }

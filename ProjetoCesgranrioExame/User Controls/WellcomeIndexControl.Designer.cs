@@ -1,7 +1,7 @@
 ﻿
 namespace ProjetoCesgranrioExame
 {
-    partial class CorrecaoDeRedacao
+    partial class WellcomeIndexControl
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -29,18 +29,34 @@ namespace ProjetoCesgranrioExame
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblNomeSistema = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // CorrecaoDeRedacao
+            // lblNomeSistema
+            // 
+            this.lblNomeSistema.AutoSize = true;
+            this.lblNomeSistema.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNomeSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeSistema.Location = new System.Drawing.Point(290, 235);
+            this.lblNomeSistema.Name = "lblNomeSistema";
+            this.lblNomeSistema.Size = new System.Drawing.Size(653, 51);
+            this.lblNomeSistema.TabIndex = 0;
+            this.lblNomeSistema.Text = "Bem vindo ao SGW -  WALLACE";
+            // 
+            // WellcomeIndexControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "CorrecaoDeRedacao";
-            this.Size = new System.Drawing.Size(1249, 656);
+            this.Controls.Add(this.lblNomeSistema);
+            this.Name = "WellcomeIndexControl";
+            this.Size = new System.Drawing.Size(1196, 616);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblNomeSistema;
     }
 }

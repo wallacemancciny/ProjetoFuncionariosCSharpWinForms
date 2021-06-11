@@ -29,6 +29,8 @@ namespace ProjetoCesgranrioExame
             gerenciarFuncionario.BringToFront();
             simularGeracaoImagens1.Hide();
             simularGeracaoImagens1.SendToBack();
+            correcaoDeRedacao1.Hide();
+            correcaoDeRedacao1.SendToBack();
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,6 +51,14 @@ namespace ProjetoCesgranrioExame
             wellcomeIndexControl1.Hide();
             simularGeracaoImagens1.Show();
 
+        }
+
+        private void corrigirRedaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gerenciarFuncionario.Hide();
+            wellcomeIndexControl1.Hide();
+            simularGeracaoImagens1.Hide();
+            correcaoDeRedacao1.Show();
         }
     }
 }

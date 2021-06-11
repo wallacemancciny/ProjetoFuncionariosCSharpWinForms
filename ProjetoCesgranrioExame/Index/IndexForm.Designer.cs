@@ -38,13 +38,14 @@ namespace ProjetoCesgranrioExame
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.correçãoDeProvaDeRedaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.simularGeraçãoDeImagensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.corrigirRedaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.simularGeraçãoDeImagensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.simularGeracaoImagens1 = new ProjetoCesgranrioExame.SimularGeracaoImagens();
             this.wellcomeIndexControl1 = new ProjetoCesgranrioExame.WellcomeIndexControl();
             this.gerenciarFuncionario = new ProjetoCesgranrioExame.GerenciarFuncionario();
-            this.simularGeracaoImagens1 = new ProjetoCesgranrioExame.SimularGeracaoImagens();
+            this.correcaoDeRedacao1 = new ProjetoCesgranrioExame.CorrecaoDeRedacao();
             this.contextMenuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -115,8 +116,28 @@ namespace ProjetoCesgranrioExame
             this.correçãoDeProvaDeRedaçãoToolStripMenuItem.Size = new System.Drawing.Size(194, 20);
             this.correçãoDeProvaDeRedaçãoToolStripMenuItem.Text = "Correção de Imagem de Redação";
             // 
+            // corrigirRedaçãoToolStripMenuItem
+            // 
+            this.corrigirRedaçãoToolStripMenuItem.Name = "corrigirRedaçãoToolStripMenuItem";
+            this.corrigirRedaçãoToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.corrigirRedaçãoToolStripMenuItem.Text = "Corrigir Imagem de Redação";
+            this.corrigirRedaçãoToolStripMenuItem.Click += new System.EventHandler(this.corrigirRedaçãoToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(229, 6);
+            // 
+            // simularGeraçãoDeImagensToolStripMenuItem
+            // 
+            this.simularGeraçãoDeImagensToolStripMenuItem.Name = "simularGeraçãoDeImagensToolStripMenuItem";
+            this.simularGeraçãoDeImagensToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.simularGeraçãoDeImagensToolStripMenuItem.Text = "Simular a geração de Imagens";
+            this.simularGeraçãoDeImagensToolStripMenuItem.Click += new System.EventHandler(this.simularGeraçãoDeImagensToolStripMenuItem_Click);
+            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.correcaoDeRedacao1);
             this.panel2.Controls.Add(this.simularGeracaoImagens1);
             this.panel2.Controls.Add(this.wellcomeIndexControl1);
             this.panel2.Controls.Add(this.gerenciarFuncionario);
@@ -126,23 +147,12 @@ namespace ProjetoCesgranrioExame
             this.panel2.Size = new System.Drawing.Size(1226, 624);
             this.panel2.TabIndex = 3;
             // 
-            // simularGeraçãoDeImagensToolStripMenuItem
+            // simularGeracaoImagens1
             // 
-            this.simularGeraçãoDeImagensToolStripMenuItem.Name = "simularGeraçãoDeImagensToolStripMenuItem";
-            this.simularGeraçãoDeImagensToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.simularGeraçãoDeImagensToolStripMenuItem.Text = "Simular a geração de Imagens";
-            this.simularGeraçãoDeImagensToolStripMenuItem.Click += new System.EventHandler(this.simularGeraçãoDeImagensToolStripMenuItem_Click);
-            // 
-            // corrigirRedaçãoToolStripMenuItem
-            // 
-            this.corrigirRedaçãoToolStripMenuItem.Name = "corrigirRedaçãoToolStripMenuItem";
-            this.corrigirRedaçãoToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.corrigirRedaçãoToolStripMenuItem.Text = "Corrigir Imagem de Redação";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(229, 6);
+            this.simularGeracaoImagens1.Location = new System.Drawing.Point(0, 0);
+            this.simularGeracaoImagens1.Name = "simularGeracaoImagens1";
+            this.simularGeracaoImagens1.Size = new System.Drawing.Size(1226, 624);
+            this.simularGeracaoImagens1.TabIndex = 2;
             // 
             // wellcomeIndexControl1
             // 
@@ -159,12 +169,12 @@ namespace ProjetoCesgranrioExame
             this.gerenciarFuncionario.Size = new System.Drawing.Size(1226, 624);
             this.gerenciarFuncionario.TabIndex = 0;
             // 
-            // simularGeracaoImagens1
+            // correcaoDeRedacao1
             // 
-            this.simularGeracaoImagens1.Location = new System.Drawing.Point(0, 0);
-            this.simularGeracaoImagens1.Name = "simularGeracaoImagens1";
-            this.simularGeracaoImagens1.Size = new System.Drawing.Size(1226, 624);
-            this.simularGeracaoImagens1.TabIndex = 2;
+            this.correcaoDeRedacao1.Location = new System.Drawing.Point(0, 0);
+            this.correcaoDeRedacao1.Name = "correcaoDeRedacao1";
+            this.correcaoDeRedacao1.Size = new System.Drawing.Size(1226, 624);
+            this.correcaoDeRedacao1.TabIndex = 3;
             // 
             // IndexForm
             // 
@@ -203,5 +213,6 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem simularGeraçãoDeImagensToolStripMenuItem;
         private SimularGeracaoImagens simularGeracaoImagens1;
+        private CorrecaoDeRedacao correcaoDeRedacao1;
     }
 }

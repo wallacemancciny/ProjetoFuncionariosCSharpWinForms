@@ -1,9 +1,7 @@
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.exe.config
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.exe
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\bin\Debug\ProjetoCesgranrioExame.pdb
-D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csprojAssemblyReference.cache
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.FormDepartamento.resources
-D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.FormHomeFuncionarios.resources
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.Properties.Resources.resources
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csproj.GenerateResource.cache
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csproj.CoreCompileInputs.cache
@@ -23,3 +21,9 @@ C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\Projet
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.WellcomeIndexControl.resources
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.SimularGeracaoImagens.resources
 C:\Users\wallace.qa\Desktop\Projetos C#\ProjetoFuncionariosCSharpWinForms\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.CorrecaoDeRedacao.resources
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.CorrecaoDeRedacao.resources
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.GerenciarFuncionario.resources
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.IndexForm.resources
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.SimularGeracaoImagens.resources
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.WellcomeIndexControl.resources
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csprojAssemblyReference.cache
