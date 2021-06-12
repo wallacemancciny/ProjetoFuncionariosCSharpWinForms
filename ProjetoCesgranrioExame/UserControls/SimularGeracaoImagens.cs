@@ -61,6 +61,9 @@ namespace ProjetoCesgranrioExame
                     Redacao geraAluno = new Redacao();
                     
                     geraAluno.GerarAlunos("Aluno" + alunoIndex++, NotaRandomica(), false);
+                    
+                    //IMPRIME A MENSAGEM NA TELA PARA CADA ALUNO CRIADO
+                    //MessageBox.Show("Aluno " + alunoIndex);
                     //Thread.Sleep(10);//usado para simular o tamanho da operação
                 }
              
@@ -80,8 +83,6 @@ namespace ProjetoCesgranrioExame
         public async void btnStart_Click(object sender, EventArgs e)
         {
 
-            MensagemEmParalelo();
-
             String quantAlunosTrim = textQntAlunos.Text.Trim();
 
             if (quantAlunosTrim == "")
@@ -90,6 +91,7 @@ namespace ProjetoCesgranrioExame
 
             } else
             {
+                MensagemEmParalelo();
                 List<string> list = new List<string>();
 
 
@@ -103,7 +105,7 @@ namespace ProjetoCesgranrioExame
                 //Código do progresso mudando
                 progress.ProgressChanged += (o, report) =>
                 {
-                    lblStatus.Text = string.Format("Gerando Alunos e Redação...{0}%", report.PercentComplete);
+                    lblStatus.Text = string.Format("Gerando " + textQntAlunos.Text + " Alunos e Redação... {0}%", report.PercentComplete);
                     progressBar.Value = report.PercentComplete;
                     progressBar.Update();
                 };
