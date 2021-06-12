@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Redacao.cs" />
+    <Compile Include="Forms\Informativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Informativo.Designer.cs">
+      <DependentUpon>Informativo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CorrecaoDeRedacao.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="UserControls\WellcomeIndexControl.Designer.cs">
       <DependentUpon>WellcomeIndexControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Informativo.resx">
+      <DependentUpon>Informativo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CorrecaoDeRedacao.resx">
       <DependentUpon>CorrecaoDeRedacao.cs</DependentUpon>
     </EmbeddedResource>

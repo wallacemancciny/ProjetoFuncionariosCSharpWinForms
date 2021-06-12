@@ -35,8 +35,9 @@ namespace ProjetoCesgranrioExame
             // lblNomeSistema
             // 
             this.lblNomeSistema.AutoSize = true;
-            this.lblNomeSistema.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNomeSistema.BackColor = System.Drawing.SystemColors.Highlight;
             this.lblNomeSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeSistema.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblNomeSistema.Location = new System.Drawing.Point(290, 235);
             this.lblNomeSistema.Name = "lblNomeSistema";
             this.lblNomeSistema.Size = new System.Drawing.Size(653, 51);
@@ -47,6 +48,7 @@ namespace ProjetoCesgranrioExame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.Controls.Add(this.lblNomeSistema);
             this.Name = "WellcomeIndexControl";
             this.Size = new System.Drawing.Size(1196, 616);

@@ -36,7 +36,11 @@ namespace ProjetoCesgranrioExame
             return notaGerada;
            
         }
-        
+
+        public void MessagemBtnStartClick()
+        {
+            MessageBox.Show("Está rodando em paralelo!");
+        }
 
         private Task ProcessData(List<string> list, IProgress<Redacao> progress)
         {
@@ -44,11 +48,11 @@ namespace ProjetoCesgranrioExame
             int totalProcess = list.Count;
             var progressReport = new Redacao();
             int alunoIndex = 0;
-            
-            
-
 
             return Task.Run(() => {
+
+                
+
                 for (int i = 0; i < totalProcess; i++)
                 {
                     progressReport.PercentComplete = index++ * 100 / totalProcess;
@@ -59,35 +63,61 @@ namespace ProjetoCesgranrioExame
                     geraAluno.GerarAlunos("Aluno" + alunoIndex++, NotaRandomica(), false);
                     //Thread.Sleep(10);//usado para simular o tamanho da operação
                 }
-            });
-         }
+             
 
- 
+            });
+
+        }
+
+        public void MensagemEmParalelo()
+        {
+            Informativo FormInfo = new Informativo();
+            FormInfo.Show();
+        }
+         
+
 
         public async void btnStart_Click(object sender, EventArgs e)
         {
-            //int valorDigitado = Convert.ToInt32(btnStart.Text);
-            List<string> list = new List<string>();
-            
-            for (int i = 0; i < 10000; i++)
-            
-                list.Add(i.ToString());
-            lblStatus.Text = "Trabalhando...";
 
+            MensagemEmParalelo();
 
-            var progress = new Progress<Redacao>();
-           
-            //Código do progresso mudando
-            progress.ProgressChanged += (o, report) =>
+            String quantAlunosTrim = textQntAlunos.Text.Trim();
+
+            if (quantAlunosTrim == "")
             {
-                lblStatus.Text = string.Format("Gerando Alunos e Redação...{0}%", report.PercentComplete);
-                progressBar.Value = report.PercentComplete;
-                progressBar.Update();
-            };
-            await ProcessData(list, progress);
-            lblStatus.Text = "Finalizado com sucesso!";
+                MessageBox.Show("Você não pode gerar as redações sem digitar nada!");
+
+            } else
+            {
+                List<string> list = new List<string>();
+
+
+                for (int i = 0; i < Convert.ToInt32(quantAlunosTrim); i++)
+
+                    list.Add(i.ToString());
+                lblStatus.Text = "Trabalhando...";
+
+                var progress = new Progress<Redacao>();
+
+                //Código do progresso mudando
+                progress.ProgressChanged += (o, report) =>
+                {
+                    lblStatus.Text = string.Format("Gerando Alunos e Redação...{0}%", report.PercentComplete);
+                    progressBar.Value = report.PercentComplete;
+                    progressBar.Update();
+                };
+
+                await ProcessData(list, progress);
+
+                lblStatus.Text = "Finalizado com sucesso!";
+            }
             
+   
+
         }
+
+        
         
 
 

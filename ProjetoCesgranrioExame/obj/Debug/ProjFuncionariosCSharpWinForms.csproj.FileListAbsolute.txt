@@ -27,3 +27,4 @@ D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.SimularGeracaoImagens.resources
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.WellcomeIndexControl.resources
 D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjFuncionariosCSharpWinForms.csprojAssemblyReference.cache
+D:\Projetos\Projeto Cesgranrio Developer\Codigo\ProjetoCesgranrioExame - Wallace\ProjetoCesgranrioExame\obj\Debug\ProjetoCesgranrioExame.Informativo.resources

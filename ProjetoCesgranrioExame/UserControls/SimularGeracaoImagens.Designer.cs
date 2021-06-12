@@ -32,14 +32,14 @@ namespace ProjetoCesgranrioExame
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textQntAlunos = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -66,18 +66,18 @@ namespace ProjetoCesgranrioExame
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // textBox1
+            // textQntAlunos
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(101, 20);
-            this.textBox1.TabIndex = 2;
+            this.textQntAlunos.Location = new System.Drawing.Point(145, 116);
+            this.textQntAlunos.Name = "textQntAlunos";
+            this.textQntAlunos.Size = new System.Drawing.Size(101, 20);
+            this.textQntAlunos.TabIndex = 2;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnStart);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textQntAlunos);
             this.groupBox1.Location = new System.Drawing.Point(57, 145);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(402, 286);
@@ -94,6 +94,17 @@ namespace ProjetoCesgranrioExame
             this.groupBox2.Size = new System.Drawing.Size(626, 286);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.Cornsilk;
+            this.lblStatus.Location = new System.Drawing.Point(167, 80);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(122, 20);
+            this.lblStatus.TabIndex = 2;
+            this.lblStatus.Text = "Processing...0%";
             // 
             // progressBar
             // 
@@ -128,16 +139,6 @@ namespace ProjetoCesgranrioExame
             this.label3.TabIndex = 5;
             this.label3.Text = "Simulador - Gerador de Alunos";
             // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.ForeColor = System.Drawing.Color.Cornsilk;
-            this.lblStatus.Location = new System.Drawing.Point(158, 84);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(82, 13);
-            this.lblStatus.TabIndex = 2;
-            this.lblStatus.Text = "Processing...0%";
-            // 
             // SimularGeracaoImagens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,7 +163,7 @@ namespace ProjetoCesgranrioExame
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textQntAlunos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
