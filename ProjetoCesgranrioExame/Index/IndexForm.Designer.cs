@@ -42,10 +42,10 @@ namespace ProjetoCesgranrioExame
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.simularGeraçãoDeImagensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.correcaoDeRedacao1 = new ProjetoCesgranrioExame.CorrecaoDeRedacao();
             this.simularGeracaoImagens1 = new ProjetoCesgranrioExame.SimularGeracaoImagens();
             this.wellcomeIndexControl1 = new ProjetoCesgranrioExame.WellcomeIndexControl();
             this.gerenciarFuncionario = new ProjetoCesgranrioExame.GerenciarFuncionario();
-            this.correcaoDeRedacao1 = new ProjetoCesgranrioExame.CorrecaoDeRedacao();
             this.contextMenuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -147,8 +147,17 @@ namespace ProjetoCesgranrioExame
             this.panel2.Size = new System.Drawing.Size(1226, 624);
             this.panel2.TabIndex = 3;
             // 
+            // correcaoDeRedacao1
+            // 
+            this.correcaoDeRedacao1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.correcaoDeRedacao1.Location = new System.Drawing.Point(0, 0);
+            this.correcaoDeRedacao1.Name = "correcaoDeRedacao1";
+            this.correcaoDeRedacao1.Size = new System.Drawing.Size(1226, 624);
+            this.correcaoDeRedacao1.TabIndex = 3;
+            // 
             // simularGeracaoImagens1
             // 
+            this.simularGeracaoImagens1.BackColor = System.Drawing.SystemColors.Highlight;
             this.simularGeracaoImagens1.Location = new System.Drawing.Point(0, 0);
             this.simularGeracaoImagens1.Name = "simularGeracaoImagens1";
             this.simularGeracaoImagens1.Size = new System.Drawing.Size(1226, 624);
@@ -156,25 +165,19 @@ namespace ProjetoCesgranrioExame
             // 
             // wellcomeIndexControl1
             // 
-            this.wellcomeIndexControl1.Location = new System.Drawing.Point(0, 0);
+            this.wellcomeIndexControl1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.wellcomeIndexControl1.Location = new System.Drawing.Point(0, -3);
             this.wellcomeIndexControl1.Name = "wellcomeIndexControl1";
             this.wellcomeIndexControl1.Size = new System.Drawing.Size(1226, 624);
             this.wellcomeIndexControl1.TabIndex = 1;
             // 
             // gerenciarFuncionario
             // 
-            this.gerenciarFuncionario.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.gerenciarFuncionario.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.gerenciarFuncionario.Location = new System.Drawing.Point(0, 0);
             this.gerenciarFuncionario.Name = "gerenciarFuncionario";
             this.gerenciarFuncionario.Size = new System.Drawing.Size(1226, 624);
             this.gerenciarFuncionario.TabIndex = 0;
-            // 
-            // correcaoDeRedacao1
-            // 
-            this.correcaoDeRedacao1.Location = new System.Drawing.Point(0, 0);
-            this.correcaoDeRedacao1.Name = "correcaoDeRedacao1";
-            this.correcaoDeRedacao1.Size = new System.Drawing.Size(1226, 624);
-            this.correcaoDeRedacao1.TabIndex = 3;
             // 
             // IndexForm
             // 
