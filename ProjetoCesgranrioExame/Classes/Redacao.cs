@@ -16,13 +16,13 @@ namespace ProjetoCesgranrioExame
         SqlCommand cmd = new SqlCommand();
         public String mensagem = "";
 
-        public void GerarAlunos(String Nome, int Nota, bool Revisao)
+        public void GerarAlunos(String Nome, bool Revisao)
         {
             //Comando Sql
-            cmd.CommandText = "insert into Alunos (Nome, Nota, Revisao) values (@Nome, @Nota, @Revisao)";
+            cmd.CommandText = "insert into Alunos (Nome, Revisao) values (@Nome, @Revisao)";
             //parametros
             cmd.Parameters.AddWithValue("@Nome", Nome);
-            cmd.Parameters.AddWithValue("@Nota", Nota);
+
             cmd.Parameters.AddWithValue("@Revisao", Revisao);
 
 

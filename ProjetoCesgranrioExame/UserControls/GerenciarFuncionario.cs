@@ -338,6 +338,29 @@ namespace ProjetoCesgranrioExame
                 dataGridViewHome.DataSource = Funcionario.GetFuncionariosRecord();
 
         }
+        //public static Bitmap ConvertTextToImage(string txt, string fontname, int fontsize, Color bgcolor, Color fcolor, int width, int Height)
+        //{
+        //    try
+        //    {
+        //        //cria o bitmap
+        //        Bitmap bmp = new Bitmap(width, Height);
+        //        using (Graphics graphics = Graphics.FromImage(bmp))
+        //        {
+        //            //define a fonte e escreve o texto
+        //            Font font = new Font(fontname, fontsize);
+        //            graphics.FillRectangle(new SolidBrush(bgcolor), 0, 0, bmp.Width, bmp.Height);
+        //            graphics.DrawString(txt, font, new SolidBrush(fcolor), 0, 0);
+        //            graphics.Flush();
+        //            font.Dispose();
+        //            graphics.Dispose();
+        //        }
+        //        return bmp;
+        //    }
+        //    catch
+        //    {
+        //        throw;
+        //    }
+        //}
 
         private void btnExportarTxt_Click_1(object sender, EventArgs e)
         {
@@ -356,11 +379,17 @@ namespace ProjetoCesgranrioExame
                 }
         }
 
+
+
         public void ExportarDadosGridView()
         {
             TextWriter writer = new StreamWriter(@"C:\folder\Text.txt");
 
+            
 
+            
+
+            //CABEÇALHO DAS TABELAS DO GRID QUE SERÃO EXPORTADOS
             //writer.Write(dataGridViewHome.Columns[0].HeaderText = "Id");
             writer.Write((dataGridViewHome.Columns[0].DataPropertyName = "Id") + ";");
 
@@ -380,6 +409,10 @@ namespace ProjetoCesgranrioExame
 
                 {
                     writer.Write(dataGridViewHome.Rows[i].Cells[c].Value.ToString() + ";");
+                    
+                    //ConvertTextToImage("teste", "12", 12, Color.Red, Color.Green, 1024, 768);
+
+
                 }
 
                 writer.WriteLine("");

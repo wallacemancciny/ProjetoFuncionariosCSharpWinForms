@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -42,6 +43,30 @@ namespace ProjetoCesgranrioExame
             MessageBox.Show("Está rodando em paralelo!");
         }
 
+        public static Bitmap ConvertTextToImage(string txt, string fontname, int fontsize, Color bgcolor, Color fcolor, int width, int Height)
+        {
+            try
+            {
+                //cria o bitmap
+                Bitmap bmp = new Bitmap(width, Height);
+                using (Graphics graphics = Graphics.FromImage(bmp))
+                {
+                    //define a fonte e escreve o texto
+                    Font font = new Font(fontname, fontsize);
+                    graphics.FillRectangle(new SolidBrush(bgcolor), 0, 0, bmp.Width, bmp.Height);
+                    graphics.DrawString(txt, font, new SolidBrush(fcolor), 0, 0);
+                    graphics.Flush();
+                    font.Dispose();
+                    graphics.Dispose();
+                }
+                return bmp;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         private Task ProcessData(List<string> list, IProgress<Redacao> progress)
         {
             int index = 1;
@@ -60,8 +85,9 @@ namespace ProjetoCesgranrioExame
 
                     Redacao geraAluno = new Redacao();
                     
-                    geraAluno.GerarAlunos("Aluno" + alunoIndex++, NotaRandomica(), false);
-                    
+                    geraAluno.GerarAlunos("Aluno" + alunoIndex++, false);
+                    ConvertTextToImage("Nome do Aluno:" + "\n" + "Id do Aluno:" + "\n" + "Nota do Aluno:" + "\n", "32", 24, Color.White, Color.Black, 1024, 768).Save(Path.Combine(@"C:\folder\", alunoIndex.ToString() + ".jpg" ));
+
                     //IMPRIME A MENSAGEM NA TELA PARA CADA ALUNO CRIADO
                     //MessageBox.Show("Aluno " + alunoIndex);
                     //Thread.Sleep(10);//usado para simular o tamanho da operação
@@ -77,8 +103,8 @@ namespace ProjetoCesgranrioExame
             Informativo FormInfo = new Informativo();
             FormInfo.Show();
         }
-         
 
+        
 
         public async void btnStart_Click(object sender, EventArgs e)
         {
