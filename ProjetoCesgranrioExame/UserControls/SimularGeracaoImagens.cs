@@ -104,7 +104,6 @@ namespace ProjetoCesgranrioExame
             FormInfo.Show();
         }
 
-        
 
         public async void btnStart_Click(object sender, EventArgs e)
         {
@@ -117,28 +116,63 @@ namespace ProjetoCesgranrioExame
 
             } else
             {
-                MensagemEmParalelo();
-                List<string> list = new List<string>();
-
-
-                for (int i = 0; i < Convert.ToInt32(quantAlunosTrim); i++)
-
-                    list.Add(i.ToString());
-                lblStatus.Text = "Trabalhando...";
-
-                var progress = new Progress<Redacao>();
-
-                //Código do progresso mudando
-                progress.ProgressChanged += (o, report) =>
+                if (Directory.Exists(@"C:\folder\") && File.Exists("Text.txt"))
                 {
-                    lblStatus.Text = string.Format("Gerando " + textQntAlunos.Text + " Alunos e Redação... {0}%", report.PercentComplete);
-                    progressBar.Value = report.PercentComplete;
-                    progressBar.Update();
-                };
+                    MensagemEmParalelo();
+                    List<string> list = new List<string>();
 
-                await ProcessData(list, progress);
 
-                lblStatus.Text = "Finalizado com sucesso!";
+                    for (int i = 0; i < Convert.ToInt32(quantAlunosTrim); i++)
+
+                        list.Add(i.ToString());
+                    lblStatus.Text = "Trabalhando...";
+
+                    var progress = new Progress<Redacao>();
+
+                    //Código do progresso mudando
+                    progress.ProgressChanged += (o, report) =>
+                    {
+                        lblStatus.Text = string.Format("Gerando " + textQntAlunos.Text + " Alunos e Redação... {0}%", report.PercentComplete);
+                        progressBar.Value = report.PercentComplete;
+                        progressBar.Update();
+                    };
+
+                    await ProcessData(list, progress);
+
+                    lblStatus.Text = "Finalizado com sucesso!";
+
+                }
+                else
+                {
+                    Directory.CreateDirectory(@"C:\folder\");
+                    File.Create("Text.txt");
+
+                    MensagemEmParalelo();
+                    List<string> list = new List<string>();
+
+
+                    for (int i = 0; i < Convert.ToInt32(quantAlunosTrim); i++)
+
+                        list.Add(i.ToString());
+                    lblStatus.Text = "Trabalhando...";
+
+                    var progress = new Progress<Redacao>();
+
+                    //Código do progresso mudando
+                    progress.ProgressChanged += (o, report) =>
+                    {
+                        lblStatus.Text = string.Format("Gerando " + textQntAlunos.Text + " Alunos e Redação... {0}%", report.PercentComplete);
+                        progressBar.Value = report.PercentComplete;
+                        progressBar.Update();
+                    };
+
+                    await ProcessData(list, progress);
+
+                    lblStatus.Text = "Finalizado com sucesso!";
+                }
+
+
+
             }
             
    
