@@ -14,11 +14,13 @@ namespace ProjetoCesgranrioExame
 {
     public partial class SimularGeracaoImagens : UserControl
     {
-       
 
+        
+        
 
         public SimularGeracaoImagens()
         {
+            
             InitializeComponent();
         }
 
@@ -84,9 +86,29 @@ namespace ProjetoCesgranrioExame
                     progress.Report(progressReport);
 
                     Redacao geraAluno = new Redacao();
+
+                    if (Directory.Exists(@"C:\folder\"))
+                    {
+                        geraAluno.GerarAlunos("Aluno" + alunoIndex++, false);
+
+                        
+                        
+
+                        ConvertTextToImage("Nome do Aluno: Aluno" + geraAluno.UltimoIdFuncionarioInserido + "\n" + "Id do Aluno:" + geraAluno.UltimoIdFuncionarioInserido + "\n" + "Nota do Aluno: " + NotaRandomica() + "\n", "42", 42, Color.White, Color.Black, 1024, 768).Save(Path.Combine(@"C:\folder\", geraAluno.UltimoIdFuncionarioInserido + ".jpg"));
+
+                    }
+                    else
+                    {
+                        Directory.CreateDirectory(@"C:\folder\");
+
+                        
+                        
+
+                        geraAluno.GerarAlunos("Aluno" + alunoIndex++, false);
+                        ConvertTextToImage("Nome do Aluno: Aluno" + geraAluno.UltimoIdFuncionarioInserido + "\n" + "Id do Aluno:" + geraAluno.UltimoIdFuncionarioInserido + "\n" + "Nota do Aluno: " + NotaRandomica() + "\n", "42", 42, Color.White, Color.Black, 1024, 768).Save(Path.Combine(@"C:\folder\", geraAluno.UltimoIdFuncionarioInserido + ".jpg"));
+                    }
+
                     
-                    geraAluno.GerarAlunos("Aluno" + alunoIndex++, false);
-                    ConvertTextToImage("Nome do Aluno:" + "\n" + "Id do Aluno:" + "\n" + "Nota do Aluno:" + "\n", "32", 24, Color.White, Color.Black, 1024, 768).Save(Path.Combine(@"C:\folder\", alunoIndex.ToString() + ".jpg" ));
 
                     //IMPRIME A MENSAGEM NA TELA PARA CADA ALUNO CRIADO
                     //MessageBox.Show("Aluno " + alunoIndex);
@@ -116,71 +138,34 @@ namespace ProjetoCesgranrioExame
 
             } else
             {
-                if (Directory.Exists(@"C:\folder\") && File.Exists("Text.txt"))
+                MensagemEmParalelo();
+                List<string> list = new List<string>();
+
+
+                for (int i = 0; i < Convert.ToInt32(quantAlunosTrim); i++)
+
+                    list.Add(i.ToString());
+                lblStatus.Text = "Trabalhando...";
+
+                var progress = new Progress<Redacao>();
+
+                //Código do progresso mudando
+                progress.ProgressChanged += (o, report) =>
                 {
-                    MensagemEmParalelo();
-                    List<string> list = new List<string>();
+                    lblStatus.Text = string.Format("Gerando " + textQntAlunos.Text + " Alunos e Redação... {0}%", report.PercentComplete);
+                    progressBar.Value = report.PercentComplete;
+                    progressBar.Update();
+                };
 
+                await ProcessData(list, progress);
 
-                    for (int i = 0; i < Convert.ToInt32(quantAlunosTrim); i++)
-
-                        list.Add(i.ToString());
-                    lblStatus.Text = "Trabalhando...";
-
-                    var progress = new Progress<Redacao>();
-
-                    //Código do progresso mudando
-                    progress.ProgressChanged += (o, report) =>
-                    {
-                        lblStatus.Text = string.Format("Gerando " + textQntAlunos.Text + " Alunos e Redação... {0}%", report.PercentComplete);
-                        progressBar.Value = report.PercentComplete;
-                        progressBar.Update();
-                    };
-
-                    await ProcessData(list, progress);
-
-                    lblStatus.Text = "Finalizado com sucesso!";
-
-                }
-                else
-                {
-                    Directory.CreateDirectory(@"C:\folder\");
-                    File.Create("Text.txt");
-
-                    MensagemEmParalelo();
-                    List<string> list = new List<string>();
-
-
-                    for (int i = 0; i < Convert.ToInt32(quantAlunosTrim); i++)
-
-                        list.Add(i.ToString());
-                    lblStatus.Text = "Trabalhando...";
-
-                    var progress = new Progress<Redacao>();
-
-                    //Código do progresso mudando
-                    progress.ProgressChanged += (o, report) =>
-                    {
-                        lblStatus.Text = string.Format("Gerando " + textQntAlunos.Text + " Alunos e Redação... {0}%", report.PercentComplete);
-                        progressBar.Value = report.PercentComplete;
-                        progressBar.Update();
-                    };
-
-                    await ProcessData(list, progress);
-
-                    lblStatus.Text = "Finalizado com sucesso!";
-                }
-
+                lblStatus.Text = "Finalizado com sucesso!";
 
 
             }
             
-   
 
         }
-
-        
-        
 
 
     }

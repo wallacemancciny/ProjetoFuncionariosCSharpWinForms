@@ -15,7 +15,7 @@ namespace ProjetoCesgranrioExame
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
         public String mensagem = "";
-        public String UltimoIdFuncionarioInserido = "";
+        public int UltimoIdFuncionarioInserido = 0;
 
         public void GerarAlunos(String Nome, bool Revisao)
         {
@@ -42,9 +42,9 @@ namespace ProjetoCesgranrioExame
                 //mostrar mensagem de erro ou sucesso
                 //this.mensagem = "Cadastrado com Sucesso!";
                 //this.mensagem = Convert.ToString(last_insertid);
-                string last_insert_String = Convert.ToString(last_insertid);
+                //string last_insert_String = Convert.ToString(last_insertid);
                 //return last_insert_String;
-                this.UltimoIdFuncionarioInserido = last_insert_String;
+                this.UltimoIdFuncionarioInserido = last_insertid;
 
             }
             catch (SqlException)
