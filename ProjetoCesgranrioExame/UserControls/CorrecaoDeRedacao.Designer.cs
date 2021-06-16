@@ -32,16 +32,14 @@ namespace ProjetoCesgranrioExame
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnRevisarProximo = new System.Windows.Forms.Button();
+            this.btnSalvarNotaRevisada = new System.Windows.Forms.Button();
+            this.textNotaRevisada = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblIdAlunoValor = new System.Windows.Forms.Label();
+            this.lblIdAluno = new System.Windows.Forms.Label();
+            this.lblNomeAluno = new System.Windows.Forms.Label();
+            this.lblNomeAlunoValor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cesgranrioTestDBDataSet1 = new ProjetoCesgranrioExame.CesgranrioTestDBDataSet();
             this.groupBox1.SuspendLayout();
@@ -53,6 +51,7 @@ namespace ProjetoCesgranrioExame
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.ForeColor = System.Drawing.Color.Cornsilk;
             this.groupBox1.Location = new System.Drawing.Point(524, 88);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(421, 508);
@@ -70,132 +69,112 @@ namespace ProjetoCesgranrioExame
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.btnRevisarProximo);
+            this.groupBox2.Controls.Add(this.btnSalvarNotaRevisada);
+            this.groupBox2.Controls.Add(this.textNotaRevisada);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.lblIdAlunoValor);
+            this.groupBox2.Controls.Add(this.lblIdAluno);
+            this.groupBox2.Controls.Add(this.lblNomeAluno);
+            this.groupBox2.Controls.Add(this.lblNomeAlunoValor);
+            this.groupBox2.ForeColor = System.Drawing.Color.Cornsilk;
             this.groupBox2.Location = new System.Drawing.Point(142, 88);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(255, 339);
+            this.groupBox2.Size = new System.Drawing.Size(324, 339);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Correção - Dados do Aluno";
             // 
-            // button2
+            // btnRevisarProximo
             // 
-            this.button2.Location = new System.Drawing.Point(11, 289);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Avalidar Próximo Aluno";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRevisarProximo.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnRevisarProximo.Location = new System.Drawing.Point(9, 222);
+            this.btnRevisarProximo.Name = "btnRevisarProximo";
+            this.btnRevisarProximo.Size = new System.Drawing.Size(130, 23);
+            this.btnRevisarProximo.TabIndex = 4;
+            this.btnRevisarProximo.Text = "Revisar Próximo Aluno";
+            this.btnRevisarProximo.UseVisualStyleBackColor = true;
+            this.btnRevisarProximo.Click += new System.EventHandler(this.btnRevisarProximo_Click);
             // 
-            // button1
+            // btnSalvarNotaRevisada
             // 
-            this.button1.Location = new System.Drawing.Point(11, 243);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalvarNotaRevisada.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnSalvarNotaRevisada.Location = new System.Drawing.Point(9, 176);
+            this.btnSalvarNotaRevisada.Name = "btnSalvarNotaRevisada";
+            this.btnSalvarNotaRevisada.Size = new System.Drawing.Size(130, 23);
+            this.btnSalvarNotaRevisada.TabIndex = 4;
+            this.btnSalvarNotaRevisada.Text = "Salvar";
+            this.btnSalvarNotaRevisada.UseVisualStyleBackColor = true;
+            this.btnSalvarNotaRevisada.Click += new System.EventHandler(this.btnSalvarNotaRevisada_Click);
             // 
-            // textBox1
+            // textNotaRevisada
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 198);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 20);
-            this.textBox1.TabIndex = 3;
+            this.textNotaRevisada.Location = new System.Drawing.Point(9, 131);
+            this.textNotaRevisada.Name = "textNotaRevisada";
+            this.textNotaRevisada.Size = new System.Drawing.Size(130, 20);
+            this.textNotaRevisada.TabIndex = 3;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 151);
+            this.label8.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label8.Location = new System.Drawing.Point(8, 87);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(135, 26);
             this.label8.TabIndex = 2;
             this.label8.Text = "Corrigir Nota";
             // 
-            // label7
+            // lblIdAlunoValor
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Coral;
-            this.label7.Location = new System.Drawing.Point(80, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "15";
+            this.lblIdAlunoValor.AutoSize = true;
+            this.lblIdAlunoValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdAlunoValor.ForeColor = System.Drawing.Color.Cyan;
+            this.lblIdAlunoValor.Location = new System.Drawing.Point(74, 25);
+            this.lblIdAlunoValor.Name = "lblIdAlunoValor";
+            this.lblIdAlunoValor.Size = new System.Drawing.Size(0, 20);
+            this.lblIdAlunoValor.TabIndex = 1;
             // 
-            // label3
+            // lblIdAluno
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label3.Location = new System.Drawing.Point(6, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Id do Aluno:";
+            this.lblIdAluno.AutoSize = true;
+            this.lblIdAluno.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lblIdAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdAluno.ForeColor = System.Drawing.Color.Cornsilk;
+            this.lblIdAluno.Location = new System.Drawing.Point(6, 30);
+            this.lblIdAluno.Name = "lblIdAluno";
+            this.lblIdAluno.Size = new System.Drawing.Size(76, 13);
+            this.lblIdAluno.TabIndex = 1;
+            this.lblIdAluno.Text = "Id do Aluno:";
             // 
-            // label5
+            // lblNomeAluno
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Coral;
-            this.label5.Location = new System.Drawing.Point(75, 82);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "6,5";
+            this.lblNomeAluno.AutoSize = true;
+            this.lblNomeAluno.BackColor = System.Drawing.SystemColors.Highlight;
+            this.lblNomeAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeAluno.ForeColor = System.Drawing.Color.Cornsilk;
+            this.lblNomeAluno.Location = new System.Drawing.Point(6, 58);
+            this.lblNomeAluno.Name = "lblNomeAluno";
+            this.lblNomeAluno.Size = new System.Drawing.Size(97, 13);
+            this.lblNomeAluno.TabIndex = 0;
+            this.lblNomeAluno.Text = "Nome do Aluno:";
             // 
-            // label4
+            // lblNomeAlunoValor
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label4.Location = new System.Drawing.Point(6, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Nota Atual: ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label6.Location = new System.Drawing.Point(6, 55);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Nome do Aluno:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Coral;
-            this.label2.Location = new System.Drawing.Point(109, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Fulano De Tal";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblNomeAlunoValor.AutoSize = true;
+            this.lblNomeAlunoValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeAlunoValor.ForeColor = System.Drawing.Color.Cyan;
+            this.lblNomeAlunoValor.Location = new System.Drawing.Point(100, 56);
+            this.lblNomeAlunoValor.Name = "lblNomeAlunoValor";
+            this.lblNomeAlunoValor.Size = new System.Drawing.Size(211, 17);
+            this.lblNomeAlunoValor.TabIndex = 0;
+            this.lblNomeAlunoValor.Text = "Nenhum Aluno para Revisar";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Cornsilk;
             this.label1.Location = new System.Drawing.Point(358, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(329, 37);
@@ -217,6 +196,7 @@ namespace ProjetoCesgranrioExame
             this.Controls.Add(this.groupBox1);
             this.Name = "CorrecaoDeRedacao";
             this.Size = new System.Drawing.Size(1249, 656);
+            this.Load += new System.EventHandler(this.CorrecaoDeRedacao_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -233,16 +213,14 @@ namespace ProjetoCesgranrioExame
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblIdAluno;
+        private System.Windows.Forms.Label lblNomeAlunoValor;
+        private System.Windows.Forms.Label lblNomeAluno;
+        private System.Windows.Forms.Label lblIdAlunoValor;
         private System.Windows.Forms.Label label8;
         private CesgranrioTestDBDataSet cesgranrioTestDBDataSet1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSalvarNotaRevisada;
+        private System.Windows.Forms.TextBox textNotaRevisada;
+        private System.Windows.Forms.Button btnRevisarProximo;
     }
 }

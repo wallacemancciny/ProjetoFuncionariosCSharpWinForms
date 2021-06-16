@@ -36,7 +36,7 @@ namespace ProjetoCesgranrioExame
                 //executar comando, pega o ultimo id inserido na tabela e guarda na variavel last_insertid
                 int last_insertid = int.Parse(cmd.ExecuteScalar().ToString());
                 //executar comando
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
                 //desconectar
                 conexao.desconectar();
                 //mostrar mensagem de erro ou sucesso
@@ -55,6 +55,53 @@ namespace ProjetoCesgranrioExame
         }
 
         public int PercentComplete { get; set; }
+
+        public DataTable BuscaAlunoRandon()
+        {
+
+            SqlCommand cmd = new SqlCommand
+                ("select top 1 * from Alunos where Revisao = 0 order by NEWID()", conexao.conectar());
+            DataTable dt = new DataTable();
+
+            conexao.conectar();
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+            dt.Load(sdr);
+            conexao.desconectar();
+
+            return dt;
+        
+        }
+
+        public void SalvaNotaRevisadaAlunoAleatorio(int IdAlunoRandon, int Nota)
+        {
+
+            //Comando Sql
+            cmd.CommandText = "update Alunos set Nota = @Nota, Revisao = 'true' where Id = @IdAlunoRandon";
+            //parametros
+            cmd.Parameters.AddWithValue("@IdAlunoRandon", IdAlunoRandon);
+            cmd.Parameters.AddWithValue("@Nota", Nota);
+
+
+            try
+            {
+                //conectar com banco
+                cmd.Connection = conexao.conectar();
+                //executar comando
+                cmd.ExecuteNonQuery();
+                //desconectar
+                conexao.desconectar();
+                //mostrar mensagem de erro ou sucesso
+                this.mensagem = "Revisão efetuada com Sucesso!";
+            }
+            catch (SqlException)
+            {
+                this.mensagem = "Erro ao se conectar com o banco de dados [SalvaNotaRevisadaAlunoAleatorio]";
+
+            }
+
+        }
+
 
     }
 }

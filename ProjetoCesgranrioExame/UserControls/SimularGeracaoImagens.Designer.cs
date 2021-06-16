@@ -149,6 +149,7 @@ namespace ProjetoCesgranrioExame
             this.Controls.Add(this.groupBox1);
             this.Name = "SimularGeracaoImagens";
             this.Size = new System.Drawing.Size(1283, 685);
+            this.Load += new System.EventHandler(this.SimularGeracaoImagens_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

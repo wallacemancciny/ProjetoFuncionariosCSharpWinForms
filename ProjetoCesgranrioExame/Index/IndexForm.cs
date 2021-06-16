@@ -59,6 +59,13 @@ namespace ProjetoCesgranrioExame
             wellcomeIndexControl1.Hide();
             simularGeracaoImagens1.Hide();
             correcaoDeRedacao1.Show();
+
+            //atualiza aluno aleatorio na tela
+
+            CorrecaoDeRedacao formCorrecRed = new CorrecaoDeRedacao();
+            formCorrecRed.atualizaAlunoRandomico();
+
+
         }
     }
 }
