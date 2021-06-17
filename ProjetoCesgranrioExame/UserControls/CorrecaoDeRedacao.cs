@@ -12,17 +12,10 @@ namespace ProjetoCesgranrioExame
 {
     public partial class CorrecaoDeRedacao : UserControl
     {
-        
+        String pegaIdAluno = "";
         public CorrecaoDeRedacao()
         {
             InitializeComponent();
-        }
-
-        private void CorrecaoDeRedacao_Load(object sender, EventArgs e)
-        {
-
-            atualizaAlunoRandomico();
-
         }
 
         public void atualizaAlunoRandomico()
@@ -32,13 +25,24 @@ namespace ProjetoCesgranrioExame
             Redacao alunoRand = new Redacao();
 
             DataTable dtAlunoRand = alunoRand.BuscaAlunoRandon();
-
+            
             foreach (DataRow dr in dtAlunoRand.Rows)
             {
-                lblIdAlunoValor.Text = dr["Id"].ToString();
+                lblIdAlunoValor.Text  = dr["Id"].ToString();
+                pegaIdAluno = dr["Id"].ToString();
+
                 lblNomeAlunoValor.Text = dr["Nome"].ToString();
+                imageBox.BackgroundImage = Image.FromFile(@"C:\folder\" + pegaIdAluno + ".jpg");
             }
         }
+
+        public void CorrecaoDeRedacao_Load(object sender, EventArgs e)
+        {
+            atualizaAlunoRandomico();
+            
+        }
+
+
 
         private void btnSalvarNotaRevisada_Click(object sender, EventArgs e)
         {

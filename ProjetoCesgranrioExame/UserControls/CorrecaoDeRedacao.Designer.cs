@@ -30,42 +30,42 @@ namespace ProjetoCesgranrioExame
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imageBox = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRevisarProximo = new System.Windows.Forms.Button();
             this.btnSalvarNotaRevisada = new System.Windows.Forms.Button();
             this.textNotaRevisada = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lblIdAlunoValor = new System.Windows.Forms.Label();
-            this.lblIdAluno = new System.Windows.Forms.Label();
+            this.IdAluno = new System.Windows.Forms.Label();
             this.lblNomeAluno = new System.Windows.Forms.Label();
             this.lblNomeAlunoValor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cesgranrioTestDBDataSet1 = new ProjetoCesgranrioExame.CesgranrioTestDBDataSet();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.imageBox);
             this.groupBox1.ForeColor = System.Drawing.Color.Cornsilk;
             this.groupBox1.Location = new System.Drawing.Point(524, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(421, 508);
+            this.groupBox1.Size = new System.Drawing.Size(524, 508);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Imagem da Redação do Aluno";
             // 
-            // pictureBox1
+            // imageBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(409, 483);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.imageBox.Location = new System.Drawing.Point(6, 19);
+            this.imageBox.Name = "imageBox";
+            this.imageBox.Size = new System.Drawing.Size(510, 480);
+            this.imageBox.TabIndex = 1;
+            this.imageBox.TabStop = false;
             // 
             // groupBox2
             // 
@@ -74,7 +74,7 @@ namespace ProjetoCesgranrioExame
             this.groupBox2.Controls.Add(this.textNotaRevisada);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.lblIdAlunoValor);
-            this.groupBox2.Controls.Add(this.lblIdAluno);
+            this.groupBox2.Controls.Add(this.IdAluno);
             this.groupBox2.Controls.Add(this.lblNomeAluno);
             this.groupBox2.Controls.Add(this.lblNomeAlunoValor);
             this.groupBox2.ForeColor = System.Drawing.Color.Cornsilk;
@@ -135,17 +135,17 @@ namespace ProjetoCesgranrioExame
             this.lblIdAlunoValor.Size = new System.Drawing.Size(0, 20);
             this.lblIdAlunoValor.TabIndex = 1;
             // 
-            // lblIdAluno
+            // IdAluno
             // 
-            this.lblIdAluno.AutoSize = true;
-            this.lblIdAluno.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lblIdAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdAluno.ForeColor = System.Drawing.Color.Cornsilk;
-            this.lblIdAluno.Location = new System.Drawing.Point(6, 30);
-            this.lblIdAluno.Name = "lblIdAluno";
-            this.lblIdAluno.Size = new System.Drawing.Size(76, 13);
-            this.lblIdAluno.TabIndex = 1;
-            this.lblIdAluno.Text = "Id do Aluno:";
+            this.IdAluno.AutoSize = true;
+            this.IdAluno.BackColor = System.Drawing.SystemColors.Highlight;
+            this.IdAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IdAluno.ForeColor = System.Drawing.Color.Cornsilk;
+            this.IdAluno.Location = new System.Drawing.Point(6, 30);
+            this.IdAluno.Name = "IdAluno";
+            this.IdAluno.Size = new System.Drawing.Size(76, 13);
+            this.IdAluno.TabIndex = 1;
+            this.IdAluno.Text = "Id do Aluno:";
             // 
             // lblNomeAluno
             // 
@@ -198,7 +198,7 @@ namespace ProjetoCesgranrioExame
             this.Size = new System.Drawing.Size(1249, 656);
             this.Load += new System.EventHandler(this.CorrecaoDeRedacao_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cesgranrioTestDBDataSet1)).EndInit();
@@ -210,10 +210,10 @@ namespace ProjetoCesgranrioExame
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imageBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblIdAluno;
+        private System.Windows.Forms.Label IdAluno;
         private System.Windows.Forms.Label lblNomeAlunoValor;
         private System.Windows.Forms.Label lblNomeAluno;
         private System.Windows.Forms.Label lblIdAlunoValor;

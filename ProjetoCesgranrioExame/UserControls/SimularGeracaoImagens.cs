@@ -95,7 +95,7 @@ namespace ProjetoCesgranrioExame
                         //SALVA ALUNO NO BANCO
                         geraAluno.GerarAlunos("Aluno" + alunoIndex++, false);
                         //SALVA IMAGEM NO DIRETORIO
-                        ConvertTextToImage("Nome do Aluno: Aluno" + (alunoIndex-1) + "\n" + "Id do Aluno:" + geraAluno.UltimoIdFuncionarioInserido + "\n" + "Nota do Aluno: " + NotaRandomica() + "\n", "42", 42, Color.White, Color.Black, 1024, 768).Save(Path.Combine(@"C:\folder\", geraAluno.UltimoIdFuncionarioInserido + ".jpg"));
+                        ConvertTextToImage("Nome do Aluno: Aluno" + (alunoIndex-1) + "\n" + "Id do Aluno:" + geraAluno.UltimoIdFuncionarioInserido + "\n" + "Nota do Aluno: " + NotaRandomica() + "\n", "18", 18, Color.White, Color.Black, 510, 480).Save(Path.Combine(@"C:\folder\", geraAluno.UltimoIdFuncionarioInserido + ".jpg"));
 
                     }
                     else
@@ -105,7 +105,7 @@ namespace ProjetoCesgranrioExame
                         //SALVA ALUNO NO BANCO
                         geraAluno.GerarAlunos("Aluno" + alunoIndex++, false);
                         //SALVA IMAGEM NO DIRETORIO
-                        ConvertTextToImage("Nome do Aluno: Aluno" + (alunoIndex - 1) + "\n" + "Id do Aluno:" + geraAluno.UltimoIdFuncionarioInserido + "\n" + "Nota do Aluno: " + NotaRandomica() + "\n", "42", 42, Color.White, Color.Black, 1024, 768).Save(Path.Combine(@"C:\folder\", geraAluno.UltimoIdFuncionarioInserido + ".jpg"));
+                        ConvertTextToImage("Nome do Aluno: Aluno" + (alunoIndex - 1) + "\n" + "Id do Aluno:" + geraAluno.UltimoIdFuncionarioInserido + "\n" + "Nota do Aluno: " + NotaRandomica() + "\n", "18", 18, Color.White, Color.Black, 510, 480).Save(Path.Combine(@"C:\folder\", geraAluno.UltimoIdFuncionarioInserido + ".jpg"));
                     }
 
                     
